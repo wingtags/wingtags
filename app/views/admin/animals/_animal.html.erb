@@ -1,0 +1,107 @@
+<div class='row'>
+  <div class='item clearfix'>
+    <%= link_to(edit_admin_animal_path(animal)) do %>
+      <div class='item-image'> 
+        <%= image_tag("animal_profile_default.png") %> 
+      </div>
+      <div class='item-content'>
+        <div class='item-header'>
+          <!--<div class='numberCircle'><%= animal.tag_code %></div> -->
+          <%= animal.name %>
+        </div>
+        <div>
+          <em>Cacatua galerita, <%= animal.gender.downcase  %></em><br/>
+          <%= "#{animal.tag_colour} #{animal.tag_code}" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<style>
+.item {
+  /* display: block;*/
+  border: 1px solid black;
+  padding: 1em;
+}
+
+.item-link {
+  display: block;
+}
+
+.item-image {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  padding: 0;
+  margin: 0 1em 0 0;
+  float: left;
+}
+
+.item-content {
+  display: block;
+  float: left;
+  margin: 0;
+}
+
+.item-header {
+  display: block;
+  font-weight: bold;
+}
+
+.item-header-content {
+  display: inline-block;
+  float: left;
+}
+
+.numberCircle {
+    display: inline-block;
+    vertical-align: bottom;
+    float: left;
+    margin-right: 0.5em;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 50%;
+
+    padding-top: 0;
+    
+    background: #fff;
+    border: 1px solid #666;
+    color: #666;
+    text-align: center;
+    
+    font-size: 0.7em;
+}
+
+
+.circle {
+  display: block;
+  width: 5em;
+  height: 5em;
+  margin: 1em auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em; 
+}
+</style>
+
+<!--
+position: relative;
+font-size: 14px;
+font-weight: bold;
+text-align: center;
+background-color: #dddddd;
+color: #ffffff;
+display: inline-block;
+min-width: 18px;
+padding: 0 2px;
+height: 18px;
+line-height: 18px;
+border-radius: 15px;
+margin-left: 7px;
+cursor: pointer;
+vertical-align: middle;
+-->
