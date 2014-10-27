@@ -1,10 +1,35 @@
-class AdminPolicy < Struct.new(:user, :dashboard)
-  def initialize(user, dashboard)
+class AdminPolicy < Struct.new(:user, :record)
+  def initialize(user, record)
+    raise Pundit::NotAuthorizedError, "user must be an administrator" unless user && user.role == 'Admin'
     @user = user
-    @dashboard = dashboard
+    @record = record
+  end
+
+  def index?
+    true
   end
 
   def show?
-    @user.role == 'Admin'
+    true
+  end
+
+  def create?
+    true
+  end
+
+  def new?
+    create?
+  end
+
+  def update?
+    true
+  end
+
+  def edit?
+    update?
+  end
+
+  def destroy?
+    true
   end
 end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'observations/index'
+
   namespace :admin do
   get 'animals/index'
   end
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   
   get 'home/index'
+  get '/about' => 'home#about'
 
   #get 'admin/index'
 

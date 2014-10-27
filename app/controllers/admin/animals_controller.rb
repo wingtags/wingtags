@@ -1,4 +1,7 @@
 class Admin::AnimalsController < ApplicationController
+
+  before_action :verify_admin
+
   def index
     @animals = Animal.all.order_by(:created_at).to_a
   end
@@ -35,5 +38,9 @@ class Admin::AnimalsController < ApplicationController
 
   def edit
     @animal = Animal.find(params[:id])
+  end
+
+  def verify_admin
+    authorize :admin
   end
 end

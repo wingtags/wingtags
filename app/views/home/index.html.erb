@@ -1,6 +1,64 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 
-<% if current_user.role == 'Admin' %>
-  <%= link_to 'Admin', admin_dashboard_index_path %>
-<% end %>
+<section class="main-content">
+  <div class="row centered-text">
+    <div class="large-12 columns" style="cursor:pointer;" onclick="location.href='about.html';">
+      <p>The purpose of the Wingtags Project is to understand how 
+Sulphur-crested Cockatoos have adapted to living in the highly urban 
+environment of Sydney by using crowdsourced reports from people like 
+you.</p>
+      <%= link_to 'Learn more', about_path %>
+
+       <hr>
+    </div>
+  </div>
+</section>
+
+
+<section class="main-content">
+  <div class="row centered-text">
+    <div class="large-12 columns" style="cursor:pointer;" onclick="location.href='form.html';">
+      <a href="form.html">
+        <h2 class="subheader">Seen a bird?</h2></a>
+        <p>Our birds have a large yellow tag on their wing. If you've seen one, please tell us!</p>
+        <p><a href="form.html">>> Make a report </a></p>
+<hr>
+</div>
+  </div>
+</section>
+
+<section class="main-content">
+  <div class="row centered-text">
+    <div class="large-12 columns" style="cursor:pointer;" onclick="location.href='#';">
+      <a href="http://beta.wingtags.com/observations">
+        <h2 class="subheader">Sightings</h2></a>
+        <p>See where our birds have been about town.</p>
+        <p><a href="#">>> See all sightings </a></p>
+   <hr>
+</div>
+  </div>
+</section>
+
+<section class="main-content">
+  <div class="row centered-text">
+    <div class="large-12 columns" style="cursor:pointer;" onclick="location.href='birds.html';">
+      <h2 class="subheader">The birds</h2>
+      <p>Papparazzi shots of our little avian celebrities </p>
+      <p><a href="birds.html">>> See all sightings </a></p>
+
+       <hr>
+    </div>
+  </div>
+</section>
+
+<section class="main-content">
+  <div class="row centered-text">
+    <div class="large-12 columns" style="cursor:pointer;" onclick="location.href='sponsorship.html';">
+      <a href="sponsorship.html">
+        <h2 class="subheader">Sponsorships</h2></a>
+      <p>Name your very own bird, plus other exclusive privledges</p>
+      <p><a href="sponsorship.html">>> Please support Wingtags </a></p>
+    </div>
+  </div>
+</section>

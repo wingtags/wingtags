@@ -12,6 +12,38 @@
   </head>
 
   <body>
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href=<%= root_path %>>The Wingtags Project</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+  
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><a href="about.html">About</a></li>
+          <li class="divider"></li>
+          <li><a href="form.html">Seen a bird?</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Sightings</a></li>
+          <li class="divider"></li>
+          <li><a href="birds.html">The birds</a></li>
+          <li class="divider"></li>
+          <li><a href="sponsorship.html">Sponsorship</a></li>
+          <% if current_user %>
+            <li class="divider"></li>
+            <li><%= link_to 'Admin', admin_dashboard_index_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>            
+          <% else %>
+            <li class="divider"></li>
+            <li><%= link_to 'Login', new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </section>
+    </nav>
+
     <div class='row'>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
