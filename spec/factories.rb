@@ -1,4 +1,7 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :observation do
+    
+  end
+
 
   factory :user do
     first_name  'Normal'

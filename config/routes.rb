@@ -2,18 +2,11 @@ Rails.application.routes.draw do
 
   get 'observations/index'
 
-  namespace :admin do
-  get 'animals/index'
-  end
-
-  namespace :admin do
-  get 'dashboard/index'
-  end
-
   root to: 'home#index'
   
   get 'home/index'
   get '/about' => 'home#about'
+  get '/observations' => 'observations#index'
 
   #get 'admin/index'
 
@@ -22,7 +15,7 @@ Rails.application.routes.draw do
   resources :animals
 
   namespace :admin do 
-    get '', to: 'dashboard#index', as: '/' 
+    get 'dashboard/index'
     resources :animals
   end
 
