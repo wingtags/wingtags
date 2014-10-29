@@ -1,11 +1,13 @@
-<div class='large-6 medium-8 small-centered columns'>
-  <h3>Update Animal</h3>
-  <%= form_for [:admin, @animal] do |f| %>
-    <%= render :partial => "form", :locals=>{:f=>f} %>
-    
-    <p class='right'>
-      <%= link_to "Cancel", admin_animals_path, class: 'button' %>
-      <%= f.submit "Update", class: 'button' %>
-    </p>
-  <% end %>
+<div class='row'>
+  <div class='large-6 medium-8 small-centered columns'>
+    <h3>Update Animal</h3>
+    <%= form_for [:admin, @animal] do |f| %>
+      <%= render :partial => "form", :locals=>{:f=>f} %>
+      
+      <p class='right'>
+        <%= link_to "Cancel", admin_animals_path, class: 'button' %>
+        <%= f.submit "Update", class: 'button' %>
+      </p>
+    <% end %>
+  </div>
 </div>

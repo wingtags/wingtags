@@ -1,12 +1,12 @@
 Name: <%= f.text_field :name %>
 Gender: <%= f.select :gender, options_for_select(['Undetermined', 'Unknowable', 'Female', 'Male', 'Hermaphrodite', 'Gynandromorph']) %>
-<div class='row'>
+  <div class='row'>
   <div class='small-8 columns'>
     Tag Colour: <%= f.select(:tag_colour, options_for_select([['Yellow'], ['Green']], 1)) %>
   </div>
   <div class='small-4 columns'>
     Tag Code: <%= f.text_field :tag_code %>
   </div>
-  
 </div>
+  
 Notes: <%= f.text_area :notes, size: "60x12" %>
