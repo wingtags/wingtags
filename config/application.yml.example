@@ -1,0 +1,29 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+development:
+  RAILS_SECRET_KEY: '978332390e6485ae027e5acbac48438e174876b61dbb24f1f756924eaa99ef442a3ea10a818d88f0a9e83e10f9f51bbc7744c51bce783689c7e056192030de1e'
+  RETHINKDB_DB: 'Wingtags'
+  RETHINKDB_HOST: 'localhost'
+  RETHINKDB_PORT: '28015'
+
+test:
+  RAILS_SECRET_KEY: 'd8c5908af7e4bde909f80d0fd1464b302607b606973bba119ae340306246f5440b2a2596a1f87c2945b5f75d01e9e72b4af44eb9283f8edc96af6a5d007be07a'
+  RETHINKDB_DB: 'WingtagsTest'
+  RETHINKDB_HOST: 'localhost'
+  RETHINKDB_PORT: '28015'
+
+production:
+  RAILS_SECRET_KEY:
+  RETHINKDB_DB:
+  RETHINKDB_HOST:
+  RETHINKDB_PORT:

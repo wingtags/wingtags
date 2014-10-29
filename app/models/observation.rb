@@ -10,6 +10,7 @@ class Observation
   field :observed_at, :type => Time,        :as => 'SightingDate'
   field :latitude,    :type => Float,       :as => 'Latitude'
   field :longitude,   :type => Float,       :as => 'Longitude'
+  field :geom,                              :as => 'Geom'
   field :address,     :type => String,      :as => 'Location'
   field :image,       :type => String,      :as => 'ImageURL'
   field :animal_id,   :type => String,      :as => 'WildlifeID'
