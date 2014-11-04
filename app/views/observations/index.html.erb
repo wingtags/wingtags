@@ -2,10 +2,12 @@
   <p><h1>Sightings</h1></p>
 </div>
 
-<div class='gallery'>
-  <% @observations.each do |o| %>
-    <a href="#">
-      <%= tag('img', src: o.image) %>
-    </a>
-  <% end %>
+<div class='gallery-wrap'>
+  <div class='gallery'>
+    <% @observations.each do |o| %>
+      <a href="#">
+        <%= tag('img', src: o.image) %>
+      </a>
+    <% end %>
+  </div>
 </div>
