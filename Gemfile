@@ -18,6 +18,9 @@ gem 'pundit'
 # Use Figaro to manage application configuration and secrets
 gem 'figaro'
 
+# Use Heroku's 12-factor gem to comply with Dokku's deployment expectations
+gem 'rails_12factor', group: :production
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 
