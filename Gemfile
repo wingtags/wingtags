@@ -59,22 +59,12 @@ gem 'capybara', '~> 2.4',            groups: [:development, :test]
 gem 'capybara-webkit', '~> 1.3',      groups: [:development, :test]
 
 # Jasmine for JS testing
-gem 'jasmine', '~> 2.0.3',               groups: [:development, :test]
-gem 'jasmine-jquery-rails', '~> 2.0.2',  groups: [:development, :test]
+gem 'jasmine', '~> 2.0.3',                groups: [:development, :test]
+gem 'jasmine-jquery-rails', '~> 2.0.2',   groups: [:development, :test]
 
 # Sinon for JS mocking
-gem 'sinon-rails', '~> 1.10.3',         groups: [:development, :test]
+gem 'sinon-rails', '~> 1.10.3',           groups: [:development, :test]
 
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+# Pry-Byebug for debugging
+gem 'pry-byebug'                          groups: [:development, :test]
 
