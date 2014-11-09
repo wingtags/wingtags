@@ -60,6 +60,7 @@ App.CoordinateView = Backbone.View.extend({
   },
 
   renderAddress: function(data) {
+    console.log('renderAddress called with data: ', data);
     this.loc.address = data.results[0].formatted_address;
     var suburb = this.getValueForAttribute(data, 'long_name', 'locality');
     var street = this.getValueForAttribute(data, 'long_name', 'route');
@@ -68,6 +69,7 @@ App.CoordinateView = Backbone.View.extend({
   },
 
   notify: function(location) {
+    console.log('notify called with argument: ', location);
     this.trigger('didUpdateLocation', location);
   },
 

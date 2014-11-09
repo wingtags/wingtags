@@ -61,7 +61,7 @@ describe("CoordinateView", function() {
       this.locationProvider.deferred.resolve(geopositionStub);
       this.geocodingProvider.deferred.resolve(addressStub);
 
-      expect(spy.calledWith(locationStub)).toBe(true);
+      expect(spy).toHaveBeenCalledWith(locationStub);
       done();
     });
   });
