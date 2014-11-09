@@ -13,6 +13,7 @@ App.FormView = Backbone.View.extend({
       'initializeIdentifierView',
       'initializeLocationView',
       'initializeImageView',
+      'initializeTermsconditionsView',
       'initializeSubmitView',
       'updateAnimalIdentifier',
       'updateImage',
@@ -37,6 +38,7 @@ App.FormView = Backbone.View.extend({
     this.initializeIdentifierView();
     this.initializeLocationView();
     this.initializeImageView();
+    this.initializeTermsconditionsView();
     this.initializeSubmitView();
     return this;
   },
@@ -65,6 +67,12 @@ App.FormView = Backbone.View.extend({
     }
   },
 
+  initializeTermsconditionsView: function() {
+    var view = new App.TermsconditionView({ model: this.model });
+    this.listenTo(view, 'didUpdateLocation2', this.updateTermscondition);
+    this.subviews.push(view);
+  }
+
   initializeSubmitView: function() {
     var view = new App.SubmitView({ model: this.model });
     this.listenTo(view, 'sendForm', this.preparePayload);
@@ -72,7 +80,7 @@ App.FormView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.append("<div class='row'><div class='large-6 columns'><p>Our aim is to assess Sulphur-crested Cockatoos' habitat use and movements around Sydney.<br/>Please report your sightings of tagged cockatoos, even if it’s the same bird on the same day. All reports help to build our understanding of these characters.</p></div></div>");
+    //this.$el.append("<div class='row'><div class='large-6 columns'><p>Our aim is to assess Sulphur-crested Cockatoos' habitat use and movements around Sydney.<br/>Please report your sightings of tagged cockatoos, even if it’s the same bird on the same day. All reports help to build our understanding of these characters.</p></div></div>");
     this.subviews.forEach(this.renderSubview);
     this.addCsrfToken();
     return this;
@@ -95,6 +103,11 @@ App.FormView = Backbone.View.extend({
   updateAddress: function(address) {
     var addr = address.results[0].formatted_address;
     this.model.set('address', addr);
+  },
+
+  updateTermscondition: function(checkbox) {
+    var tac = checkbox.results[0].formatted_address;
+    this.model.set('termscondition', tac);
   },
 
   updatePosition: function(geoposition) {
@@ -132,6 +145,7 @@ App.FormView = Backbone.View.extend({
     data.append('latitude', this.model.get('latitude'));
     data.append('longitude', this.model.get('longitude'));
     data.append('image', this.model.get('image'));
+    data.append('termscondition', this.model.get('termscondition'));
     data.append('timestamp', new Date().getTime());
     //this.send(data);
     this.send(data);
@@ -159,7 +173,7 @@ App.FormView = Backbone.View.extend({
     console.log('formData: ', formData)
 
     var promise = $.ajax({
-      url: 'observations',
+      url: '/observations',
       type: 'POST',
       data: formData,
       processData: false,

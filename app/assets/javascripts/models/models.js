@@ -189,6 +189,8 @@ App.GeocodingProvider = Backbone.Model.extend({
   
 App.Address = Backbone.Model.extend({ });
 
+App.Termscondition = Backbone.Model.extend({ });
+
 App.Observation = Backbone.Model.extend({
   validate: function(attrs, options) {
     var errors = [];
