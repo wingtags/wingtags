@@ -30,6 +30,9 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+# Use Backbone for single-page JS
+gem 'backbone-rails', '~> 1.1.2'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -66,5 +69,5 @@ gem 'jasmine-jquery-rails', '~> 2.0.2',   groups: [:development, :test]
 gem 'sinon-rails', '~> 1.10.3',           groups: [:development, :test]
 
 # Pry-Byebug for debugging
-gem 'pry-byebug'                          groups: [:development, :test]
+gem 'pry-byebug',                         groups: [:development, :test]
 

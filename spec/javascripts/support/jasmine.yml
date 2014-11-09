@@ -12,6 +12,9 @@
 #
 src_files:
   - assets/application.js
+  - assets/sinon.js
+  - assets/jasmine-jquery.js
+  - assets/jasmine-sinon.js
 
 # stylesheets
 #
@@ -38,6 +41,7 @@ stylesheets:
 #   - helpers/**/*.js
 #
 helpers:
+  - 'helpers/*.js'
   - 'helpers/**/*.js'
 
 # spec_files
@@ -51,6 +55,7 @@ helpers:
 #   - **/*[sS]pec.js
 #
 spec_files:
+  - '**/stubs.js'
   - '**/*[sS]pec.js'
 
 # src_dir
