@@ -1,1 +1,0 @@
-Figaro.require_keys("DEVISE_SECRET_KEY")
