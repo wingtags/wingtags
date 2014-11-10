@@ -60,6 +60,7 @@ gem 'factory_girl_rails',   groups: [:development, :test]
 # Capybara for UI & acceptance tests
 gem 'capybara', '~> 2.4',            groups: [:development, :test]
 gem 'capybara-webkit', '~> 1.3',      groups: [:development, :test]
+gem 'selenium-webdriver', groups: [:development, :test]
 
 # Jasmine for JS testing
 gem 'jasmine', '~> 2.0.3',                groups: [:development, :test]

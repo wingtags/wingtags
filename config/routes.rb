@@ -6,13 +6,15 @@ Rails.application.routes.draw do
   
   get 'home/index'
   get '/about' => 'home#about'
-  get '/observations' => 'observations#index'
+  #get '/observations' => 'observations#index'
 
   #get 'admin/index'
 
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' }
 
   resources :animals
+
+  resources :observations, only: [:index, :new]
 
   namespace :admin do 
     get 'dashboard/index'

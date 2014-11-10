@@ -5,4 +5,7 @@ class ObservationsController < ApplicationController
       o.image ? o.image = 'https://wingtags-syd.s3.amazonaws.com/images/s/' + o.image : ''
     end
   end
+
+  def new
+  end
 end
