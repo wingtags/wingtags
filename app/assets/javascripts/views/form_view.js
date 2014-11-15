@@ -71,7 +71,7 @@ App.FormView = Backbone.View.extend({
     var view = new App.TermsconditionView({ model: this.model });
     this.listenTo(view, 'didUpdateLocation2', this.updateTermscondition);
     this.subviews.push(view);
-  }
+  },
 
   initializeSubmitView: function() {
     var view = new App.SubmitView({ model: this.model });

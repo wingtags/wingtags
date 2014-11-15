@@ -1,4 +1,10 @@
 class ObservationsController < ApplicationController
+
+  protect_from_forgery with: :null_session
+  respond_to :json
+
+	#wrap_parameters format: [:json, :xml]
+
   def index
     @observations = Observation.order_by(:observed_at => :desc).limit(100).to_a
     @observations.each do |o|
@@ -7,5 +13,12 @@ class ObservationsController < ApplicationController
   end
 
   def new
+    @form_data = ObservationForm.new
+  end
+
+  def create
+    @form_data = ObservationForm.new(params['observation'])
+    @form_data.save
+    respond_with @form_data.observation
   end
 end

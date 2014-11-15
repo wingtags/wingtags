@@ -1,5 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Observation, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Observation do
+  describe 'Associations' do
+    it 'should belong_to User' do
+      pending('Dont know how to do with with NoBrainer')
+    end
+  end
 end
+

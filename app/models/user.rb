@@ -4,6 +4,8 @@ class User
 
   store_in :database => ENV['RETHINKDB_DB'], :table => 'Spotter'
 
+  has_many :observations
+
   field :id,          :type => String,      :as => 'SpotterID',   :primary_key => true
   field :created_at,  :type => Time,        :as => 'CreatedDate'
   field :updated_at,  :type => Time,        :as => 'UpdatedDate'

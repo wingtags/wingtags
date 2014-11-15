@@ -5,7 +5,7 @@ JST['location/address'] = _.template("<div id='address-template'><div class='row
 JST['location/gps'] = _.template("<div id='coordinate-template'><div class='row'><div class='large-12 columns'><div class='panel'><p><span id='gps-status'>Latitude: <%= latitude %>, Longitude: <%= longitude %></span></p></div></div></div>");
 JST['location/geocoded-address'] = _.template("<div class='row'><div class='large-12 columns'><div class='panel'><p><span id='geocoded-address'><%= addressString %></span></p></div></div></div>");
 JST['location/pending'] = _.template("<div id='coordinate-template'><div class='row'><div class='large-12 columns'><div class='panel'><p><span id='gps-status'>Getting Location...</span></p></div></div></div>");
-JST['termscondition'] = _.template("<div><div class='row'><div class='large-12 columns'><input id='checkbox1 type='checkbox'><label for='checkbox1'>I agree to the <a href='about.html#termsofuse' target='_blank'>terms & conditions.</a> Please read our <a href='about.html#privacypolicy' target='_blank'>privacy policy.</a></label></div></div></div>")
+JST['location/termscondition'] = _.template("<div class='row'><div class='large-12 columns'><div class='checkbox'><input id='checkbox1' type='checkbox'><label for='checkbox1'>I accept the <a href='about.html#termsofuse'>terms &amp; conditions.</a></label></div></<div></div>");
 JST['submit'] = _.template("<div class='row'><div class='large-12 columns' id='submit'><input type=submit class='success button expand disabled' value='Submit'></div></div>");
 JST['image'] = _.template("\
   <div class='row'> \
