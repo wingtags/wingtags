@@ -20,20 +20,17 @@ class ObservationForm
   end
 
   def save
-    user = get_user
-    animal = get_animal
     observation = Observation.new(
       :observed_at => @observed_at,
       :latitude => @latitude, 
       :longitude => @longitude,
       :address => @location,
-      :image => @image_url
+      :image => @image_url,
+      :user => get_user,
+      :animal => get_animal
     )
 
-    observation.user = user
-    observation.animal = animal
     observation.save
-    #@observation = observation
   end
 
   private
