@@ -1,6 +1,9 @@
+require 'rake'
+
 RSpec.configure do |config|
   config.before(:suite) do
-    NoBrainer.update_indexes
+  	NoBrainer.drop!
+  	NoBrainer.sync_indexes
   end
  
   config.before(:each) do

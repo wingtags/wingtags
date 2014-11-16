@@ -12,9 +12,16 @@ class ObservationForm
   attr_accessor :has_agreed_to_terms
   attr_accessor :image_url
   attr_reader :observation
+  attr_reader :user
+
+  def initialize(params={})
+    @tag_colour = TagColours::YELLOW
+    super(params)
+  end
 
   def save
     user = get_user
+    animal = get_animal
     observation = Observation.new(
       :observed_at => @observed_at,
       :latitude => @latitude, 
@@ -24,7 +31,9 @@ class ObservationForm
     )
 
     observation.user = user
-    @observation = observation
+    observation.animal = animal
+    observation.save
+    #@observation = observation
   end
 
   private
@@ -39,5 +48,9 @@ class ObservationForm
       user = User.new
     end
     user
+  end
+
+  def get_animal
+    animal = Animal.where([:tag_code => @tag_code, :tag_colour => TagColours::YELLOW]).first!
   end
 end

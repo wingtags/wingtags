@@ -145,6 +145,7 @@ class Observation
   store_in :database => ENV['RETHINKDB_DB'], :table => 'Sighting'
 
   belongs_to :user
+  belongs_to :animal
 
   field :id,          :type => String,      :as => 'SightingID',   :primary_key => true
   field :created_at,  :type => Time,        :as => 'CreatedDate'

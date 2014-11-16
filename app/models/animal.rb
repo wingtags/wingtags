@@ -4,13 +4,15 @@ class Animal
 
   store_in :database => ENV['RETHINKDB_DB'], :table => 'Wildlife'
 
+  has_many :observations
+
   field :id,          :type => String,      :as => 'WildlifeID',   :primary_key => true
   field :created_at,  :type => Time,        :as => 'CreatedDate'
   field :updated_at,  :type => Time,        :as => 'UpdatedDate'
   field :name,        :type => String,      :as => 'Name'
   field :gender,      :type => String,      :as => 'Gender'
-  field :tag_code,    :type => String,      :as => 'Tag'
-  field :tag_colour,  :type => String,      :as => 'Colour'
+  field :tag_code,    :type => Integer,     :as => 'Tag'
+  field :tag_colour,  :type => String,      :as => 'Colour',        :default => TagColours::YELLOW
   field :notes,       :type => String,      :as => 'Notes'
 
   def save!

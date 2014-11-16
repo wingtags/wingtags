@@ -48,6 +48,7 @@ class User
   # field :locked_at,       :type => Time
   
   index :email
+  index :id, :as => 'SpotterID'
 
   def save!
     self.save

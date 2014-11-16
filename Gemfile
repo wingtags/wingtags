@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 
 # Use the NoBrainer ActiveRecord adapter for RethinkDB
-gem 'nobrainer', '~>0.17'
+gem 'nobrainer', :git => 'https://github.com/nviennot/nobrainer.git', :ref => 'aa91a1d9289b44bd544f1d673bb225532eca0f77'
 
 # Use Devise for authentication
 gem 'devise'
@@ -58,9 +58,9 @@ gem 'rspec-rails',          groups: [:development, :test]
 gem 'factory_girl_rails',   groups: [:development, :test]
 
 # Capybara for UI & acceptance tests
-gem 'capybara', '~> 2.4',            groups: [:development, :test]
-gem 'capybara-webkit', '~> 1.3',      groups: [:development, :test]
-gem 'selenium-webdriver', groups: [:development, :test]
+gem 'capybara', '~> 2.4',                 groups: [:development, :test]
+gem 'capybara-webkit', '~> 1.3',          groups: [:development, :test]
+gem 'selenium-webdriver',                 groups: [:development, :test]
 
 # Jasmine for JS testing
 gem 'jasmine', '~> 2.0.3',                groups: [:development, :test]

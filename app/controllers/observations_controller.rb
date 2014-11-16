@@ -17,6 +17,7 @@ class ObservationsController < ApplicationController
   end
 
   def create
+    binding.pry
     @form_data = ObservationForm.new(params['observation'])
     @form_data.save
     respond_with @form_data.observation
