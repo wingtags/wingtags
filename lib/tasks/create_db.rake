@@ -2,7 +2,7 @@ require 'rethinkdb'
 include RethinkDB::Shortcuts
 
 # Remove existing rake task
-Rake::Task["db:create"].clear
+#Rake::Task["db:create"].clear if Rake::Task["db:create"]
 
 namespace :db do
   task :create do
