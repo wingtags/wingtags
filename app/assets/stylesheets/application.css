@@ -9146,6 +9146,24 @@ table {
     right: 0;
     z-index: 1;
 }*/
+
+.contentrows{
+        -moz-column-count:    3;
+        -webkit-column-count: 3;
+        column-count:         3;    
+    }
+
+
+@media all and (max-width: 980px){
+
+    .contentrows{
+        -moz-column-count:    2;
+        -webkit-column-count: 2;
+        column-count:         2;    
+    }
+}
+
+
 @media all and (max-width: 640px) {
   /* line 173, ../scss/app.scss */
   .orbit-caption {
@@ -9162,4 +9180,10 @@ table {
   .top-bar .name h1 a {
     padding: 0;
   }
+
+  .contentrows{
+        -moz-column-count:    1;
+        -webkit-column-count: 1;
+        column-count:         1;    
+    }
 }
