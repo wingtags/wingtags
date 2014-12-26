@@ -6,7 +6,7 @@
     <div class="row centered-text">
       <div class="large-12 columns" style="cursor:pointer;" onclick="location.href='about.html';">
         <p>Research is currently under way that involves wing-tagging sulphur-crested cockatoos (Cacatua galerita) within the Sydney region, Australia. Our aim is to learn about the cockies behaviour: site-loyalty, population size and foraging, roosting and breeding habitat preferences.</p>
-        <p><a href="about.html">>> Learn more</a></p>
+        <p><%= link_to '>> Learn more', about_path %></p> <!-- <a href="about.html">>> Learn more</a></p> -->
 
       </div>
     </div>
@@ -30,6 +30,7 @@
         <div class="large-5 columns" style="cursor:pointer;" onclick="location.href='#';">
             <h2 class="subheader">SIGHTINGS</h2></a>
             <p>See where our birds have been about town.</p>
+
             <p>>> See all sightings </p>
         </div>
 
@@ -51,7 +52,7 @@
   <section class="main-content">
     <div class="row centered-text">
       <div class="large-12 columns">
-      <div class="large-5 columns" style="cursor:pointer;" onclick="location.href='birds.html';">
+      <div class="large-5 columns" style="cursor:pointer;" onclick=<%= "location.href='#{observations_index_path}';" %>>
         <h2 class="subheader">GALLERY</h2>
         <p>Papparazzi shots of our little avian celebrities </p>
         <p>>> See all sightings </p>
