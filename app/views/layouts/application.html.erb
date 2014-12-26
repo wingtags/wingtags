@@ -33,15 +33,15 @@
   
       <section class="top-bar-section">
         <ul class="right">
-          <li><a href="about.html">ABOUT</a></li>
+          <li><%= link_to 'About', about_path %></li>
           <li class="divider"></li>
-          <li><a href="form.html">REPORT A SIGHTING</a></li>
+          <li><%= link_to 'Report a sighting', new_observation_path %></li>
           <li class="divider"></li>
-          <li><a href="#">SIGHTINGS</a></li>
+          <!-- <li><a href="#">SIGHTINGS</a></li>
+          <li class="divider"></li> -->
+          <li><%= link_to 'Gallery', observations_index_path %></li>
           <li class="divider"></li>
-          <li><a href="birds.html">GALLERY</a></li>
-          <li class="divider"></li>
-          <li><a href="sponsorship.html">SPONSORSHIP</a></li>
+          <li><%= link_to 'Sponsorship', sponsorship_path %></li>
           <% if current_user %>
             <li class="divider"></li>
             <li><%= link_to 'Admin', admin_dashboard_index_path %></li>
