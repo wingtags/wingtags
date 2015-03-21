@@ -1,0 +1,3 @@
+[submodule "dokku"]
+	path = vagrant/dokku
+	url = git@github.com:progrium/dokku.git
