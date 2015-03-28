@@ -26,22 +26,22 @@
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href=<%= root_path %>>The Wingtags Project</a></h1>
+          <h1><a href=<%= root_path %>>WINGTAGS<%= image_tag "icon1.png" %></h1>
         </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
   
       <section class="top-bar-section">
         <ul class="right">
-          <li><a href="about.html">About</a></li>
+          <li><%= link_to 'About', about_path %></li>
           <li class="divider"></li>
-          <li><a href="form.html">Seen a bird?</a></li>
+          <li><%= link_to 'Report a sighting', new_observation_path %></li>
           <li class="divider"></li>
-          <li><a href="#">Sightings</a></li>
+          <!-- <li><a href="#">SIGHTINGS</a></li>
+          <li class="divider"></li> -->
+          <li><%= link_to 'Gallery', observations_index_path %></li>
           <li class="divider"></li>
-          <li><a href="birds.html">The birds</a></li>
-          <li class="divider"></li>
-          <li><a href="sponsorship.html">Sponsorship</a></li>
+          <li><%= link_to 'Sponsorship', sponsorship_path %></li>
           <% if current_user %>
             <li class="divider"></li>
             <li><%= link_to 'Admin', admin_dashboard_index_path %></li>
@@ -62,5 +62,16 @@
   
       <%= yield %>
       
+
+    <footer>
+      <hr>
+      <a href="#">Contact</a> | <a href="termsandconditions.html">Terms & Conditions</a> | <a href="sponsorship.html">Donate</a>
+    </footer>
+
+    <!-- <script src="bower_components/foundation/js/vendor/jquery.js"></script>
+    <script src="bower_components/foundation/js/foundation.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
+    <script src="js/app.js"></script> -->
+
   </body>
 </html>
