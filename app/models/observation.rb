@@ -164,6 +164,7 @@ class Observation
 
   def observed_at
     epoch_in_ms = super()
+    puts "epoch_in_ms: #{epoch_in_ms}"
     if (epoch_in_ms)
       epoch_in_s = epoch_in_ms / 1000
       Time.at(epoch_in_s)
