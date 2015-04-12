@@ -1,7 +1,7 @@
 class ObservationsController < ApplicationController
 
   protect_from_forgery with: :null_session
-  respond_to :json
+  #respond_to :json
 
 	#wrap_parameters format: [:json, :xml]
 
@@ -13,13 +13,15 @@ class ObservationsController < ApplicationController
   end
 
   def new
-    @form_data = ObservationForm.new
+    #@form_data = ObservationForm.new
   end
 
   def create
     binding.pry
-    @form_data = ObservationForm.new(params['observation'])
-    @form_data.save
-    respond_with @form_data.observation
+
+    form_data = ObservationForm.new(params['observation'])
+    binding.pry
+    observation = form_data.save
+    render json: @observation
   end
 end
