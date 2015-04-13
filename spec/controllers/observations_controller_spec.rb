@@ -28,15 +28,14 @@ describe ObservationsController, :type => :controller do
 
   describe "POST #create" do
     before(:each) do
-      #create :user
-      create :animal
+      FactoryGirl.create :animal
+      FactoryGirl.create :user
     end
-    #let(:observation) { }
 
   	it "returns the json object after creation" do
       form = FactoryGirl.attributes_for(:observation_form)
-      #binding.pry
       post :create, { observation: form }#, { "Accept" => "application/json", "Content-Type" => "multipart/form-data" }
+      puts response.body
       expect(response.status).to eq 200
   	end
   end

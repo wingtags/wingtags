@@ -1,6 +1,7 @@
 FactoryGirl.define do
 
   factory :user do
+    id          '88c0cd22-6b7e-4bfc-9914-2a9fce61d36b'
     first_name  'Normal'
     last_name   'User'
     email       'normal_user@email.com'
@@ -21,6 +22,7 @@ FactoryGirl.define do
   end
 
   factory :animal do
+    id          '126'
     name        'cockatoo'     
     gender      'female'
     tag_code    209
@@ -35,7 +37,8 @@ FactoryGirl.define do
     longitude       13.383333
     timestamp       1388534400000  # 2014-01-01T00:00:00Z
     termscondition  true
-    image           { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'assets', 'images', 'grumpycat.jpg')) }
+    user_id         '88c0cd22-6b7e-4bfc-9914-2a9fce61d36b'
+    #image           { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'assets', 'images', 'grumpycat.jpg')) }
   end
 
   #factory :observation, class: ObservationForm do

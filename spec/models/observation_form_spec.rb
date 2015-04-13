@@ -5,14 +5,19 @@ describe ObservationForm do
 	context "valid observations" do
 
     describe '#to_observation' do
-      #subject(:form) { FactoryGirl.build :observation_form }
-      let(:observation) { FactoryGirl.build :observation }
 
       it 'should return an instantiated Observation object' do
         observation = FactoryGirl.build :observation
         form = FactoryGirl.build :observation_form
-        obs = form.to_observation
-        expect(obs.observed_at).to eq(observation.observed_at)
+
+        subject = form.to_observation
+
+        expect(subject.observed_at).to eq(observation.observed_at)
+        expect(subject.latitude).to eq(observation.latitude)
+        expect(subject.longitude).to eq(observation.longitude)
+        expect(subject.animal).to eq(observation.animal)
+        expect(subject.user).to eq(observation.user)
+        expect(subject.address).to eq(observation.address)
       end
     end
 

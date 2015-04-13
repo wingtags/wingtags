@@ -1,6 +1,17 @@
 require 'rails_helper'
 
 describe Observation do
+  describe '#save' do
+    it 'should save' do
+      args = FactoryGirl.attributes_for :observation
+
+      observation = Observation.new(args)
+      observation.save
+
+      expect(observation.persisted?).to be(true)
+    end
+  end
+
   describe 'Persistence' do
     before(:each) do
       NoBrainer.run { |r| r.table('Sighting').insert({
