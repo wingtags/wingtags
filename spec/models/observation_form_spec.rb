@@ -9,8 +9,10 @@ describe ObservationForm do
       let(:observation) { FactoryGirl.build :observation }
 
       it 'should return an instantiated Observation object' do
-        form = FactoryGirl.build :observation_form 
-        expect(form.to_observation).to eq(:observation)
+        observation = FactoryGirl.build :observation
+        form = FactoryGirl.build :observation_form
+        obs = form.to_observation
+        expect(obs.observed_at).to eq(observation.observed_at)
       end
     end
 

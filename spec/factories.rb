@@ -53,9 +53,9 @@ FactoryGirl.define do
     observed_at   Time.at(1388534400)
     latitude      52.516667
     longitude     13.383333
-    geom          
     address       'Kottbusser Straße 25, 10999 Berlin'
     image         'c8a55008-370e-4923-b3c8-cef6e325ccc1'
+    # TODO add support for geom property
   end
 
   factory :sighting, class: Hash do |f|
