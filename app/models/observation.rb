@@ -150,7 +150,7 @@ class Observation
   field :id,          :type => String,      :as => 'SightingID',   :primary_key => true
   field :created_at,  :type => Time,        :as => 'CreatedDate'
   field :updated_at,  :type => Time,        :as => 'UpdatedDate'
-  field :observed_at, :type => Time,        :as => 'SightingDate'
+  field :observed_at, :type => Integer,     :as => 'SightingDate'
   field :latitude,    :type => Float,       :as => 'Latitude'
   field :longitude,   :type => Float,       :as => 'Longitude'
   field :geom,                              :as => 'Geom'
@@ -158,4 +158,17 @@ class Observation
   field :image,       :type => String,      :as => 'ImageURL'
   field :animal_id,   :type => String,      :as => 'WildlifeID'
 
+  def observed_at=(time)
+    super(time.to_i * 1000)
+  end
+
+  def observed_at
+    epoch_in_ms = super()
+    if (epoch_in_ms)
+      epoch_in_s = epoch_in_ms / 1000
+      Time.at(epoch_in_s)
+    else
+      nil
+    end
+  end
 end

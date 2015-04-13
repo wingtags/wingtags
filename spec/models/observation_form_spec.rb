@@ -1,27 +1,40 @@
 require 'rails_helper'
 
 describe ObservationForm do
-  subject(:observation) { FactoryGirl.build :observation_form }
-
+  
 	context "valid observations" do
-    it "should validate" do
-      expect(observation.valid?).to be true
-    end
 
-    describe '#save' do
-      it "should save" do
-        user = FactoryGirl.create :user
-        animal = FactoryGirl.create :animal
+    describe '#to_observation' do
+
+      it 'should return an instantiated Observation object' do
+        observation = FactoryGirl.build :observation
         form = FactoryGirl.build :observation_form
 
-        form.tag_code = animal.tag_code
-        form.user_id = user.id
+        subject = form.to_observation
 
-        form.save
-
-        expect(Observation.all.count).to eq 1
+        expect(subject.observed_at).to eq(observation.observed_at)
+        expect(subject.latitude).to eq(observation.latitude)
+        expect(subject.longitude).to eq(observation.longitude)
+        expect(subject.animal).to eq(observation.animal)
+        expect(subject.user).to eq(observation.user)
+        expect(subject.address).to eq(observation.address)
       end
     end
+
+    #describe '#save' do
+    #  it "should save" do
+    #    user = FactoryGirl.create :user
+    #    animal = FactoryGirl.create :animal
+    #    form = FactoryGirl.build :observation_form
+#
+    #    form.tag_code = animal.tag_code
+    #    form.user_id = user.id
+#
+    #    form.save
+#
+    #    expect(Observation.all.count).to eq 1
+    #  end
+    #end
   end
 
   context "invalid observations" do
