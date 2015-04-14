@@ -28,16 +28,15 @@ class ObservationForm
 
   def to_observation
     args = {
-      observed_at: Time.at(@timestamp.to_i / 1000),
-      latitude: @latitude.to_f,
-      longitude: @longitude.to_f,
+      observed_at: Time.at(@timestamp / 1000),
+      latitude: @latitude,
+      longitude: @longitude,
       address: @address,
       # TODO: Handling image uploads
       #image: @image,
-      animal: animal_from_tag(@tag.to_i),
+      animal: animal_from_tag(@tag),
       user: user_from_id(@user_id)
     }
-    puts self
     Observation.new(args)
   end
 

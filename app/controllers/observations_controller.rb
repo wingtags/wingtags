@@ -28,10 +28,10 @@ class ObservationsController < ApplicationController
   def observation_params
     {  
       :address        => params[:address],
-      :tag            => params[:tag],
-      :latitude       => params[:latitude],
-      :longitude      => params[:longitude],
-      :timestamp      => params[:timestamp],
+      :tag            => params[:tag].to_i,
+      :latitude       => params[:latitude].to_f,
+      :longitude      => params[:longitude].to_f,
+      :timestamp      => params[:timestamp].to_f,
       :user_id        => params[:user_id],
       :user_email     => params[:user_email],
       :image          => params[:image],
