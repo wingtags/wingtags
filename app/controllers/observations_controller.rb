@@ -2,8 +2,6 @@ class ObservationsController < ApplicationController
 
   protect_from_forgery with: :null_session
 
-	#wrap_parameters format: [:json, :xml]
-
   def index
     @observations = Observation.order_by(:observed_at => :desc).limit(100).to_a
     @observations.each do |o|
@@ -16,14 +14,28 @@ class ObservationsController < ApplicationController
   end
 
   def create
-    form = ObservationForm.new(params['observation'])
+    form = ObservationForm.new(observation_params)
     observation = form.to_observation
     if observation.save?
-      puts 'saved'
       render json: observation
     else
-      puts 'not saved'
       render json: {}
     end
+  end
+
+  private
+
+  def observation_params
+    {  
+      :address        => params[:address],
+      :tag            => params[:tag],
+      :latitude       => params[:latitude],
+      :longitude      => params[:longitude],
+      :timestamp      => params[:timestamp],
+      :user_id        => params[:user_id],
+      :user_email     => params[:user_email],
+      :image          => params[:image],
+      :termscondition => params[:termscondition]
+    }
   end
 end

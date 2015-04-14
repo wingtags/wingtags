@@ -25,6 +25,7 @@ class ObservationForm
   #  @animal_class  = args[:animal_class] || Animal
   #end
 
+
   def to_observation
     args = {
       observed_at: Time.at(@timestamp.to_i / 1000),
@@ -33,20 +34,21 @@ class ObservationForm
       address: @address,
       # TODO: Handling image uploads
       #image: @image,
-      animal: animal_from_tag(@tag),
+      animal: animal_from_tag(@tag.to_i),
       user: user_from_id(@user_id)
     }
+    puts self
     Observation.new(args)
   end
 
   private
 
   def user_from_id(user_id)
-    User.find(user_id)
+    User.find(user_id) if user_id
   end
 
   def user_from_email(user_email)
-    User.where(email: user_email).first!
+    User.where(email: user_email).first! if user_email
   end
 
   def animal_from_tag(tag)

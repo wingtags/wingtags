@@ -34,8 +34,7 @@ describe ObservationsController, :type => :controller do
 
   	it "returns the json object after creation" do
       form = FactoryGirl.attributes_for(:observation_form)
-      post :create, { observation: form }#, { "Accept" => "application/json", "Content-Type" => "multipart/form-data" }
-      puts response.body
+      post :create, form, { "Accept" => "application/json", "Content-Type" => "multipart/form-data" }
       expect(response.status).to eq 200
   	end
   end
