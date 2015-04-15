@@ -165,30 +165,33 @@ App.FormView = Backbone.View.extend({
       modal.foundation('reveal', 'close');
     });
 
-    this.removeSubviews();
-    
-    var name = data.animal_id;
-    
-    this.$el.html(JST['thanks']({name: name}));
+    this.removeSubviews();    
+    this.$el.html(JST['thanks']({name: data.animal.name}));
   },
 
   send: function(formData) {
-    var options = {
+    var observation,
+        options = {
           url: '/observations',
           type: 'POST',
           data: formData,
           processData: false,
           contentType: false,
-          context: this
-        };
+        },
+        onSuccess = this.renderThanks;
 
     $('#spinner-modal').foundation('reveal', 'open');
 
     var request = $.ajax(options)
       .then(function(response) {
-        this.renderThanks(response);
+        observation = response;
+        return $.get( '/animals/' + response.animal_id);
       }, function(error) {
         console.log(error);
+      })
+      .then(function(animal) {
+        observation.animal = animal;
+        onSuccess(observation);
       });
   }
 });
