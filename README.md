@@ -1,5 +1,11 @@
 == README
 
+# Vagrant
+
+## Dokku host
+
+cat ~/.ssh/id_rsa.pub | vagrant ssh {machine_id} -c "sudo sshcommand acl-add dokku progrium"
+
 # Installation
 
 You need to set up two components: the Rails app and the RethinkDB database.
