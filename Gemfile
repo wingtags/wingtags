@@ -46,16 +46,16 @@ gem 'foundation-rails'
 gem 'jbuilder', '~> 2.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',     group: :doc
+gem 'sdoc', '~> 0.4.0',     			  group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',               group: :development
+gem 'spring',               			  group: :development
 
 # Rspec for Ruby tests
-gem 'rspec-rails',          groups: [:development, :test]
+gem 'rspec-rails',          			  groups: [:development, :test]
 
 # Factorygirl for building test stubs
-gem 'factory_girl_rails',   groups: [:development, :test]
+gem 'factory_girl_rails',				  groups: [:development, :test]
 
 # Capybara for UI & acceptance tests
 gem 'capybara', '~> 2.4',                 groups: [:development, :test]

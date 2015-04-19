@@ -16,7 +16,6 @@
 //
 //= require underscore
 //= require backbone
-//= require sinon
 //
 //= require templates/templates
 //
