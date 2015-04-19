@@ -1,1 +1,1 @@
-Figaro.require_keys("RETHINKDB_DB")
+#Figaro.require_keys("RETHINKDB_DB")
