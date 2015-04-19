@@ -6,6 +6,14 @@
 
 cat ~/.ssh/id_rsa.pub | vagrant ssh {machine_id} -c "sudo sshcommand acl-add dokku progrium"
 
+## Set container configuration
+sudo iptables -L -n
+172.17.0.3
+28015
+RETHINKDB_DB=WingtagsDevelopment
+RETHINKDB_HOST=172.17.0.3
+RETHINKDB_PORT=28015
+
 # Installation
 
 You need to set up two components: the Rails app and the RethinkDB database.
