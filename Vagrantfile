@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "rethinkdb", primary: true do |rethinkdb|
     rethinkdb.vm.provider "docker" do |d|
       d.vagrant_machine = "dokku"
-      d.vagrant_vagrantfile = "vagrant/dokku/Vagrantfile"
+      d.vagrant_vagrantfile = "vagrant_machines/dokku-0.2.3/Vagrantfile"
       d.build_dir = "."
       d.volumes = ["/rethinkdb_data:/data"]
       d.ports = ["8090:8080", "28015:28015", "29015:29015"]
