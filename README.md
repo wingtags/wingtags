@@ -13,6 +13,9 @@ sudo iptables -L -n
 RETHINKDB_DB=WingtagsDevelopment
 RETHINKDB_HOST=172.17.0.3
 RETHINKDB_PORT=28015
+RAILS_SECRET_KEY=
+DEVISE_SECRET_KEY=
+
 
 # Installation
 
