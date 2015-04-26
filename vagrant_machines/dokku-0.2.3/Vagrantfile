@@ -7,7 +7,9 @@ BOX_MEMORY = ENV["BOX_MEMORY"] || "1024"
 DOKKU_DOMAIN = ENV["DOKKU_DOMAIN"] || "dokku.me"
 DOKKU_IP = ENV["DOKKU_IP"] || "10.0.0.2"
 PREBUILT_STACK_URL = File.exist?("#{File.dirname(__FILE__)}/stack.tgz") ? 'file:///root/dokku/stack.tgz' : nil
-RETHINKDB_DATA_PATH = "/usr/local/var/rethinkdb/1.15.1"
+RETHINKDB_DATA_PATH = ENV["RETHINKDB_DATA_DIRECTORY"] || File.expand_path("../../data", File.dirname(__FILE__))
+
+Dir.mkdir(RETHINKDB_DATA_PATH) unless Dir.exist?(RETHINKDB_DATA_PATH)
 
 make_cmd = "make install"
 if PREBUILT_STACK_URL
