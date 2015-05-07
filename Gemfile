@@ -66,6 +66,9 @@ gem 'selenium-webdriver',                 groups: [:development, :test]
 gem 'jasmine', '~> 2.0.3',                groups: [:development, :test]
 gem 'jasmine-jquery-rails', '~> 2.0.2',   groups: [:development, :test]
 
+# json-schema for validating JSON documents
+gem 'json-schema', '~> 2.5.1',            groups: [:development, :test]
+
 # Sinon for JS mocking
 gem 'sinon-rails', '~> 1.10.3',           groups: [:development, :test]
 
