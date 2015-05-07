@@ -57,6 +57,7 @@ FactoryGirl.define do
     longitude     13.383333
     address       'Kottbusser Straße 25, 10999 Berlin'
     image         'c8a55008-370e-4923-b3c8-cef6e325ccc1'
+    note          'I am an important message.'
     user
     animal
     # TODO add support for geom property

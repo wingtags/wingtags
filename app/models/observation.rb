@@ -157,6 +157,7 @@ class Observation
   field :address,     :type => String,      :as => 'Location'
   field :image,       :type => String,      :as => 'ImageURL'
   field :animal_id,   :type => String,      :as => 'WildlifeID'
+  field :note,        :type => String,      :as => 'Notes',         :default => ''
 
   def observed_at=(time)
     super(time.to_i * 1000)
