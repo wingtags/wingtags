@@ -22,7 +22,8 @@ describe Observation do
       path = File.expand_path("../resources/schemas/observation.schema.json", File.dirname(__FILE__))
       schema = File.read(path)
 
-      puts JSON::Validator.fully_validate(schema, json)
+      #puts JSON::Validator.fully_validate(schema, json)
+      puts json
 
       expect(JSON::Validator.validate(schema, json)).to be(true)
     end

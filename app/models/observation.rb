@@ -137,6 +137,10 @@
 #  end
 #end
 
+
+
+
+
 class Observation
   include NoBrainer::Document
   include NoBrainer::Document::Timestamps
@@ -153,11 +157,16 @@ class Observation
   field :observed_at, :type => Integer,     :as => 'SightingDate'
   field :latitude,    :type => Float,       :as => 'Latitude'
   field :longitude,   :type => Float,       :as => 'Longitude'
-  field :geom,                              :as => 'Geom'
+  field :geom,        :type => GeomPoint,   :as => 'Geom'
   field :address,     :type => String,      :as => 'Location'
   field :image,       :type => String,      :as => 'ImageURL'
   field :animal_id,   :type => String,      :as => 'WildlifeID'
   field :note,        :type => String,      :as => 'Notes',         :default => ''
+
+  def save
+    self.geom = GeomPoint.new(self.latitude, self.longitude)
+    super
+  end
 
   def observed_at=(time)
     super(time.to_i * 1000)
@@ -173,3 +182,6 @@ class Observation
     end
   end
 end
+
+
+

@@ -5,8 +5,8 @@ FactoryGirl.define do
     first_name  'Normal'
     last_name   'User'
     email       'normal_user@email.com'
-    password    'password'
-    role        'User'
+    #password    'password'
+    #role        'User'
   end
 
   factory :visitor, class: User do
@@ -14,6 +14,7 @@ FactoryGirl.define do
   end
 
   factory :admin, class: User do
+    id          '217826da-1769-438d-ab56-87f7674f87d9'
     first_name  'Admin'
     last_name   'Administrator'
     email       'administrator@email.com'
