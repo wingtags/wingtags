@@ -114,7 +114,7 @@ GEM
     mini_portile (0.6.0)
     minitest (5.6.1)
     multi_json (1.10.1)
-    nobrainer (0.19.0)
+    nobrainer (0.20.0)
       activemodel (>= 4.1.0)
       activesupport (>= 4.1.0)
       middleware (~> 0.1.0)
@@ -239,7 +239,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   json-schema (~> 2.5.1)
-  nobrainer (~> 0.19.0)
+  nobrainer (~> 0.20.0)
   nobrainer-devise!
   pry-byebug
   pundit
