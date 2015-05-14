@@ -7,4 +7,8 @@ class HomeController < ApplicationController
 
   def sponsorship
   end
+
+  def terms
+  	render 'termsandconditions'
+  end
 end
