@@ -7,11 +7,13 @@ class User
   has_many :observations
 
   field :id,          :type => String,      :store_as => 'SpotterID',   :primary_key => true
-  field :created_at,  :type => Time,        :store_as => 'CreatedDate'
+  field :created_at,  :type => Integer,     :store_as => 'CreatedDate'
   field :updated_at,  :type => Time,        :store_as => 'UpdatedDate'
   field :first_name,  :type => String,      :store_as => 'FirstName',   :default => 'Unknown'
   field :last_name,   :type => String,      :store_as => 'LastName',    :default => 'Unknown'
   field :role,        :type => String,      :store_as => 'Role',        :default => 'Visitor'
+  field :device_uid,  :type => String,      :store_as => 'DeviceUID',   :default => 'Unknown'
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -51,6 +53,20 @@ class User
 
   def save!
     self.save
+  end
+
+  def created_at=(time)
+    super(time.to_i * 1000)
+  end
+
+  def created_at
+    epoch_in_ms = super()
+    if (epoch_in_ms)
+      epoch_in_s = epoch_in_ms / 1000
+      Time.at(epoch_in_s)
+    else
+      nil
+    end
   end
 
 
