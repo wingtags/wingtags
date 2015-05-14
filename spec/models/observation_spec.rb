@@ -13,17 +13,11 @@ describe Observation do
     end
 
     it 'should save the required schema' do
-      #args = FactoryGirl.attributes_for :observation
-
       observation = FactoryGirl.create(:observation)
-      #observation.save
 
       json = NoBrainer.run { |r| r.table('Sighting').get('021e52d0-a6b0-4f0e-b861-5316de98e1f6'); }
       path = File.expand_path("../resources/schemas/observation.schema.json", File.dirname(__FILE__))
       schema = File.read(path)
-
-      #puts JSON::Validator.fully_validate(schema, json)
-      puts json
 
       expect(JSON::Validator.validate(schema, json)).to be(true)
     end

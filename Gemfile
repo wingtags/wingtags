@@ -7,9 +7,7 @@ gem 'rails', '4.1.6'
 gem 'rethinkdb', '~> 1.15.0'
 
 # Use the NoBrainer ActiveRecord adapter for RethinkDB
-gem 'nobrainer', '~> 0.20.0'# :git => 'https://github.com/nviennot/nobrainer.git', :ref => 'aa91a1d9289b44bd544f1d673bb225532eca0f77'
-#gem 'nobrainer', '~> 0.15'
-
+gem 'nobrainer', '~> 0.20.0'
 
 # Use Devise for authentication
 gem 'devise'
