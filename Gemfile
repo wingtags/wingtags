@@ -13,7 +13,7 @@ gem 'nobrainer', '~> 0.20.0'
 gem 'devise'
 
 # Use the NoBrainer adapter for Devise
-gem 'nobrainer-devise', :git => 'https://github.com/nviennot/devise-nobrainer', :ref => '76b197ede39bda44bbda8ad7debd840e919f21e7'
+gem 'devise-nobrainer'#, :git => 'https://github.com/nviennot/devise-nobrainer', :ref => '76b197ede39bda44bbda8ad7debd840e919f21e7'
 
 # Use Pundit for authorization
 gem 'pundit'

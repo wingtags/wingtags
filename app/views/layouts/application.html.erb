@@ -42,15 +42,6 @@
           <li><%= link_to 'Gallery', observations_index_path %></li>
           <li class="divider"></li>
           <li><%= link_to 'Sponsorship', sponsorship_path %></li>
-          <% if current_user %>
-            <li class="divider"></li>
-            <li><%= link_to 'Admin', admin_dashboard_index_path %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>            
-          <% else %>
-            <li class="divider"></li>
-            <li><%= link_to 'Login', new_user_session_path %></li>
-          <% end %>
         </ul>
       </section>
     </nav>
@@ -62,7 +53,6 @@
   
       <%= yield %>
       
-
     <footer>
       <hr>
       <a href="#">Contact</a> | <a href="termsandconditions.html">Terms & Conditions</a> | <a href="sponsorship.html">Donate</a>
