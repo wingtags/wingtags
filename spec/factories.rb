@@ -25,7 +25,7 @@ FactoryGirl.define do
   factory :animal do
     id          '126'
     name        'cockatoo'     
-    gender      'female'
+    gender      'Female'
     tag_code    209
     #tag_colour  'Yellow'
     notes       'She is feisty.'

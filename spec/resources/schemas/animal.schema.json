@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "Colour": {
+      "type": "string",
+      "enum": ["Yellow"]
+    },
+    "CreatedDate": {
+      "type": "integer",
+      "minimum": 1000000000000,
+      "maximum": 9999999999999
+    },
+    "Gender": {
+      "type": "string",
+      "enum": ["Female", "Male", ""]
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Notes": {
+      "type": "string"
+    },
+    "Tag": {
+      "type": "integer"
+    },
+    "WildlifeID": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "Colour",
+    "CreatedDate",
+    "Gender",
+    "Name",
+    "Notes",
+    "Tag",
+    "WildlifeID"
+  ]
+}
