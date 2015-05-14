@@ -5,8 +5,8 @@ FactoryGirl.define do
     first_name  'Normal'
     last_name   'User'
     email       'normal_user@email.com'
-    password    'password'
-    role        'User'
+    #password    'password'
+    #role        'User'
   end
 
   factory :visitor, class: User do
@@ -14,6 +14,7 @@ FactoryGirl.define do
   end
 
   factory :admin, class: User do
+    id          '217826da-1769-438d-ab56-87f7674f87d9'
     first_name  'Admin'
     last_name   'Administrator'
     email       'administrator@email.com'
@@ -51,13 +52,15 @@ FactoryGirl.define do
   #end
 
   factory :observation do
-    user
-    animal
+    id            '021e52d0-a6b0-4f0e-b861-5316de98e1f6'
     observed_at   Time.at(1388534400)
     latitude      52.516667
     longitude     13.383333
     address       'Kottbusser Straße 25, 10999 Berlin'
     image         'c8a55008-370e-4923-b3c8-cef6e325ccc1'
+    note          'I am an important message.'
+    user
+    animal
     # TODO add support for geom property
   end
 

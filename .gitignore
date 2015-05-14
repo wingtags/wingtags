@@ -20,3 +20,6 @@
 
 # Ignore Vagrant VM images
 *.vagrant
+
+# Ignore temp db data folder
+/data

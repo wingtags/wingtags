@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'json-schema'
 
 describe Observation do
   describe '#save' do
@@ -9,6 +10,16 @@ describe Observation do
       observation.save
 
       expect(observation.persisted?).to be(true)
+    end
+
+    it 'should save the required schema' do
+      observation = FactoryGirl.create(:observation)
+
+      json = NoBrainer.run { |r| r.table('Sighting').get('021e52d0-a6b0-4f0e-b861-5316de98e1f6'); }
+      path = File.expand_path("../resources/schemas/observation.schema.json", File.dirname(__FILE__))
+      schema = File.read(path)
+
+      expect(JSON::Validator.validate(schema, json)).to be(true)
     end
   end
 

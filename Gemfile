@@ -3,14 +3,17 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 
+# Use RethinkDB ORM adapter to same version as DB. 
+gem 'rethinkdb', '~> 1.15.0'
+
 # Use the NoBrainer ActiveRecord adapter for RethinkDB
-gem 'nobrainer', :git => 'https://github.com/nviennot/nobrainer.git', :ref => 'aa91a1d9289b44bd544f1d673bb225532eca0f77'
+gem 'nobrainer', '~> 0.20.0'
 
 # Use Devise for authentication
 gem 'devise'
 
 # Use the NoBrainer adapter for Devise
-gem 'nobrainer-devise'
+gem 'nobrainer-devise', :git => 'https://github.com/nviennot/devise-nobrainer', :ref => '76b197ede39bda44bbda8ad7debd840e919f21e7'
 
 # Use Pundit for authorization
 gem 'pundit'
@@ -65,6 +68,9 @@ gem 'selenium-webdriver',                 groups: [:development, :test]
 # Jasmine for JS testing
 gem 'jasmine', '~> 2.0.3',                groups: [:development, :test]
 gem 'jasmine-jquery-rails', '~> 2.0.2',   groups: [:development, :test]
+
+# json-schema for validating JSON documents
+gem 'json-schema', '~> 2.5.1',            groups: [:development, :test]
 
 # Sinon for JS mocking
 gem 'sinon-rails', '~> 1.10.3',           groups: [:development, :test]

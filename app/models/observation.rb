@@ -137,6 +137,10 @@
 #  end
 #end
 
+
+
+
+
 class Observation
   include NoBrainer::Document
   include NoBrainer::Document::Timestamps
@@ -147,16 +151,23 @@ class Observation
   belongs_to :user
   belongs_to :animal
 
-  field :id,          :type => String,      :as => 'SightingID',   :primary_key => true
-  field :created_at,  :type => Time,        :as => 'CreatedDate'
-  field :updated_at,  :type => Time,        :as => 'UpdatedDate'
-  field :observed_at, :type => Integer,     :as => 'SightingDate'
-  field :latitude,    :type => Float,       :as => 'Latitude'
-  field :longitude,   :type => Float,       :as => 'Longitude'
-  field :geom,                              :as => 'Geom'
-  field :address,     :type => String,      :as => 'Location'
-  field :image,       :type => String,      :as => 'ImageURL'
-  field :animal_id,   :type => String,      :as => 'WildlifeID'
+  field :id,          :type => String,      :store_as => 'SightingID',   :primary_key => true
+  field :created_at,  :type => Time,        :store_as => 'CreatedDate'
+  field :updated_at,  :type => Time,        :store_as => 'UpdatedDate'
+  field :observed_at, :type => Integer,     :store_as => 'SightingDate'
+  field :latitude,    :type => Float,       :store_as => 'Latitude'
+  field :longitude,   :type => Float,       :store_as => 'Longitude'
+  field :geom,        :type => GeomPoint,   :store_as => 'Geom'
+  field :address,     :type => String,      :store_as => 'Location'
+  field :image,       :type => String,      :store_as => 'ImageURL'
+  field :animal_id,   :type => String,      :store_as => 'WildlifeID'
+  field :user_id,     :type => String,      :store_as => 'SpotterID'
+  field :note,        :type => String,      :store_as => 'Notes',         :default => ''
+
+  def save
+    self.geom = GeomPoint.new(self.latitude, self.longitude)
+    super
+  end
 
   def observed_at=(time)
     super(time.to_i * 1000)
@@ -172,3 +183,6 @@ class Observation
     end
   end
 end
+
+
+

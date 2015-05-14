@@ -1,0 +1,93 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://jsonschema.net",
+    "type": "object",
+    "properties": {
+        "Geom": {
+            "id": "http://jsonschema.net/Geom",
+            "type": "object",
+            "properties": {
+                "$reql_type$": {
+                    "type": "string"
+                },
+                "coordinates": {
+                    "id": "http://jsonschema.net/Geom/coordinates",
+                    "type": "array",
+                    "items": [
+                        {
+                            "id": "http://jsonschema.net/Geom/coordinates/0",
+                            "type": "number"
+                        },
+                        {
+                            "id": "http://jsonschema.net/Geom/coordinates/1",
+                            "type": "number"
+                        }
+                    ]
+                },
+                "type": {
+                    "id": "http://jsonschema.net/Geom/type",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "$reql_type$",
+                "coordinates",
+                "type"
+            ]
+        },
+        "ImageURL": {
+            "id": "http://jsonschema.net/ImageURL",
+            "type": "string"
+        },
+        "Latitude": {
+            "id": "http://jsonschema.net/Latitude",
+            "type": "number",
+            "minimum": -90,
+            "maximum": 90
+        },
+        "Location": {
+            "id": "http://jsonschema.net/Location",
+            "type": "string"
+        },
+        "Longitude": {
+            "id": "http://jsonschema.net/Longitude",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 180
+        },
+        "Notes": {
+            "id": "http://jsonschema.net/Notes",
+            "type": "string"
+        },
+        "SightingDate": {
+            "id": "http://jsonschema.net/SightingDate",
+            "type": "integer",
+            "minimum": 1000000000000,
+            "maximum": 9999999999999
+        },
+        "SightingID": {
+            "id": "http://jsonschema.net/SightingID",
+            "type": "string"
+        },
+        "SpotterID": {
+            "id": "http://jsonschema.net/SpotterID",
+            "type": "string"
+        },
+        "WildlifeID": {
+            "id": "http://jsonschema.net/WildlifeID",
+            "type": "string"
+        }
+    },
+    "required": [
+        "Geom",
+        "ImageURL",
+        "Latitude",
+        "Location",
+        "Longitude",
+        "Notes",
+        "SightingDate",
+        "SightingID",
+        "SpotterID",
+        "WildlifeID"
+    ]
+}
