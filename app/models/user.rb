@@ -6,12 +6,12 @@ class User
 
   has_many :observations
 
-  field :id,          :type => String,      :as => 'SpotterID',   :primary_key => true
-  field :created_at,  :type => Time,        :as => 'CreatedDate'
-  field :updated_at,  :type => Time,        :as => 'UpdatedDate'
-  field :first_name,  :type => String,      :as => 'FirstName',   :default => 'Unknown'
-  field :last_name,   :type => String,      :as => 'LastName',    :default => 'Unknown'
-  field :role,        :type => String,      :as => 'Role',        :default => 'Visitor'
+  field :id,          :type => String,      :store_as => 'SpotterID',   :primary_key => true
+  field :created_at,  :type => Time,        :store_as => 'CreatedDate'
+  field :updated_at,  :type => Time,        :store_as => 'UpdatedDate'
+  field :first_name,  :type => String,      :store_as => 'FirstName',   :default => 'Unknown'
+  field :last_name,   :type => String,      :store_as => 'LastName',    :default => 'Unknown'
+  field :role,        :type => String,      :store_as => 'Role',        :default => 'Visitor'
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -19,8 +19,8 @@ class User
 #         :recoverable, :rememberable, :trackable, :validatable
 #
   ## Database authenticatable
-  field :email,               :as => 'Email',             :type => String, :default => ""
-  field :encrypted_password,  :as => 'EncryptedPassword', :type => String, :default => ""
+  field :email,               :store_as => 'Email',             :type => String, :default => ""
+  field :encrypted_password,  :store_as => 'EncryptedPassword', :type => String, :default => ""
 #
 #  ## Recoverable
 #  field :reset_password_token,   :type => String
