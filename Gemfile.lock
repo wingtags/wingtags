@@ -1,14 +1,11 @@
 GIT
-  remote: https://github.com/nviennot/nobrainer.git
-  revision: aa91a1d9289b44bd544f1d673bb225532eca0f77
-  ref: aa91a1d9289b44bd544f1d673bb225532eca0f77
+  remote: https://github.com/nviennot/devise-nobrainer
+  revision: 76b197ede39bda44bbda8ad7debd840e919f21e7
+  ref: 76b197ede39bda44bbda8ad7debd840e919f21e7
   specs:
-    nobrainer (0.18.1)
-      activemodel (>= 4.1.0)
-      activesupport (>= 4.1.0)
-      middleware (~> 0.1.0)
-      rethinkdb (>= 1.14.0.0)
-      symbol_decoration (~> 1.0)
+    nobrainer-devise (0.2)
+      devise (>= 3.2.2)
+      nobrainer (>= 0.10.0)
 
 GEM
   remote: https://rubygems.org/
@@ -92,7 +89,7 @@ GEM
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     hike (1.2.3)
-    i18n (0.6.11)
+    i18n (0.7.0)
     jasmine (2.0.3)
       jasmine-core (~> 2.0.0)
       phantomjs
@@ -106,7 +103,7 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.1)
+    json (1.8.2)
     json-schema (2.5.1)
       addressable (~> 2.3.7)
     mail (2.6.1)
@@ -115,11 +112,14 @@ GEM
     middleware (0.1.0)
     mime-types (2.4.3)
     mini_portile (0.6.0)
-    minitest (5.4.3)
+    minitest (5.6.1)
     multi_json (1.10.1)
-    nobrainer-devise (0.3)
-      devise (>= 3.2.2)
-      nobrainer (>= 0.17.0)
+    nobrainer (0.19.0)
+      activemodel (>= 4.1.0)
+      activesupport (>= 4.1.0)
+      middleware (~> 0.1.0)
+      rethinkdb (>= 1.15.0.0)
+      symbol_decoration (~> 1.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     orm_adapter (0.5.0)
@@ -207,9 +207,9 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    symbol_decoration (1.0.0)
+    symbol_decoration (1.1.0)
     thor (0.19.1)
-    thread_safe (0.3.4)
+    thread_safe (0.3.5)
     tilt (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -239,12 +239,13 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   json-schema (~> 2.5.1)
-  nobrainer!
-  nobrainer-devise
+  nobrainer (~> 0.19.0)
+  nobrainer-devise!
   pry-byebug
   pundit
   rails (= 4.1.6)
   rails_12factor
+  rethinkdb (~> 1.15.0)
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
