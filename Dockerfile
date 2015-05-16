@@ -12,9 +12,7 @@ RUN bundle install --without development test
 
 COPY . /usr/src/app
 
-RUN apt-get update && \
-	nodejs --no-install-recommends && \
-	apt-get install -y imagemagick && \
+RUN apt-get update && apt-get install -y nodejs imagemagick && \
 	rm -rf /var/lib/apt/lists/*
 
 EXPOSE 3000
