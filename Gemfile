@@ -21,6 +21,12 @@ gem 'pundit'
 # Use Figaro to manage application configuration and secrets
 gem 'figaro'
 
+# Use Dragonfly for image handling
+gem 'dragonfly', '~> 1.0.8'
+
+# Use Amazon S3 to store Dragonfly-managed images
+gem 'dragonfly-s3_data_store', '~> 1.1.0'
+
 # Use Heroku's 12-factor gem to comply with Dokku's deployment expectations
 gem 'rails_12factor', group: :production
 

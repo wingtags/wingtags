@@ -142,10 +142,16 @@
 
 
 class Observation
+  extend Dragonfly::Model
   include NoBrainer::Document
   include NoBrainer::Document::Timestamps
-  #extend SexyPants
 
+  dragonfly_accessor :image do
+    storage_options do
+      { path: "#{SecureRandom.uuid}.jpeg" }
+    end
+  end
+  
   store_in :database => ENV['RETHINKDB_DB'], :table => 'Sighting'
 
   belongs_to :user
@@ -159,7 +165,7 @@ class Observation
   field :longitude,   :type => Float,       :store_as => 'Longitude'
   field :geom,        :type => GeomPoint,   :store_as => 'Geom'
   field :address,     :type => String,      :store_as => 'Location'
-  field :image,       :type => String,      :store_as => 'ImageURL'
+  field :image_uid,   :type => String,      :store_as => 'ImageURL'
   field :animal_id,   :type => String,      :store_as => 'WildlifeID'
   field :user_id,     :type => String,      :store_as => 'SpotterID'
   field :note,        :type => String,      :store_as => 'Notes',         :default => ''
