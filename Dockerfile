@@ -17,6 +17,6 @@ COPY . /usr/src/app
 RUN apt-get update && apt-get install -y nodejs imagemagick && \
 	rm -rf /var/lib/apt/lists/*
 
-EXPOSE 80
+EXPOSE 3000
 
 CMD ["rails", "server", "-b", "0.0.0.0"]
