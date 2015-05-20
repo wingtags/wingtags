@@ -8,10 +8,6 @@ Dragonfly.app.configure do
 
   url_format "/images"
 
-  #datastore :file,
-  #  root_path: Rails.root.join('public/system/dragonfly', Rails.env),
-  #  server_root: Rails.root.join('public')
-
   datastore :s3,
   	region: 'ap-southeast-2',
     bucket_name: 'wingtags-syd',
@@ -25,9 +21,3 @@ Dragonfly.logger = Rails.logger
 
 # Mount as middleware
 Rails.application.middleware.use Dragonfly::Middleware
-
-# Add model functionality
-if defined?(ActiveRecord::Base)
-  ActiveRecord::Base.extend Dragonfly::Model
-  ActiveRecord::Base.extend Dragonfly::Model::Validations
-end

@@ -33,7 +33,7 @@ class ObservationForm
       longitude: @longitude,
       address: @address,
       # TODO: Handling image uploads
-      #image: @image,
+      image: @image,
       animal: animal_from_tag(@tag),
       user: user_from_id(@user_id)
     }
