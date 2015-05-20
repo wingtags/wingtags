@@ -2,6 +2,11 @@ require 'rails_helper'
 require 'json-schema'
 
 describe Observation do
+
+  before do
+    Dragonfly.app.use_datastore(:memory)
+  end
+
   describe '#save' do
     it 'should save' do
       args = FactoryGirl.attributes_for :observation
@@ -21,6 +26,15 @@ describe Observation do
 
       expect(JSON::Validator.validate(schema, json)).to be(true)
     end
+
+    it 'should save an image' do
+      observation = FactoryGirl.create(:observation)
+
+      puts observation.image_uid
+
+      expect(observation.image.file).to be_instance_of(File)
+    end
+
   end
 
   describe 'Persistence' do

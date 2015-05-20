@@ -39,7 +39,7 @@ FactoryGirl.define do
     timestamp       1388534400000  # 2014-01-01T00:00:00Z
     termscondition  true
     user_id         '88c0cd22-6b7e-4bfc-9914-2a9fce61d36b'
-    #image           { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'assets', 'images', 'grumpycat.jpg')) }
+    image           { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'resources', 'images', 'grumpycat.jpg')) }
   end
 
   #factory :observation, class: ObservationForm do
@@ -57,8 +57,8 @@ FactoryGirl.define do
     latitude      52.516667
     longitude     13.383333
     address       'Kottbusser Straße 25, 10999 Berlin'
-    image         'c8a55008-370e-4923-b3c8-cef6e325ccc1'
     note          'I am an important message.'
+    image         { File.new(File.join(Rails.root, 'spec', 'resources', 'images', 'grumpycat.jpg')) }
     user
     animal
     # TODO add support for geom property
