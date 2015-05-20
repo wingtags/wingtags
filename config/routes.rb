@@ -12,16 +12,16 @@ Rails.application.routes.draw do
 
   #get 'admin/index'
 
-  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' }
+  #devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' }
 
   resources :animals
 
   resources :observations, only: [:index, :new, :create]
 
-  namespace :admin do 
-    get 'dashboard/index'
-    resources :animals
-  end
+  #namespace :admin do 
+  #  get 'dashboard/index'
+  #  resources :animals
+  #end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
