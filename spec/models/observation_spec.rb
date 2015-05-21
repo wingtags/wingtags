@@ -30,8 +30,6 @@ describe Observation do
     it 'should save an image' do
       observation = FactoryGirl.create(:observation)
 
-      puts observation.image_uid
-
       expect(observation.image.file).to be_instance_of(File)
     end
 
@@ -45,7 +43,6 @@ describe Observation do
           "coordinates"=>[151.2274945145949, -33.87189375198408],
           "type"=>"Point"
         },
-        "ImageURL"=>"0f254f6e-ac75-f66b-93a7-43b15edc5d2c.jpeg",
         "Latitude"=>-33.87189375198408,
         "Location"=>"Greenknowe Avenue\nElizabeth Bay 2011\nNSW",
         "Longitude"=>151.2274945145949,

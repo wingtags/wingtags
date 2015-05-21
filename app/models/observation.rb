@@ -3,8 +3,6 @@ class Observation
   include NoBrainer::Document
   include NoBrainer::Document::Timestamps
 
-  
-
   dragonfly_accessor :image do
     storage_options do |img|
       { path: "#{image_uuid}.#{image_format}" }
@@ -31,8 +29,7 @@ class Observation
 
   def save
     self.geom = GeomPoint.new(self.latitude, self.longitude)
-    self.image.thumb('146x195').store( :path => "s/#{image_uuid}.#{image_format}" )
-    #Dragonfly.app.store(self.image.file, 'path' => "s/#{image_uuid}.#{image_format}")
+    store_image_thumbnails
     super
   end
 
@@ -50,14 +47,24 @@ class Observation
     end
   end
 
+
   private
 
   def image_uuid
-    @image_uuid ||= SecureRandom.uuid
+    @uuid ||= SecureRandom.uuid
+    self.image_uid ? self.image_uid : @uuid
   end
 
   def image_format
-    @image_format ||= self.image.format
+    format ||= self.image.format
+  end
+
+  def store_image_thumbnails
+    if self.image
+      self.image.thumb('146x195').store( :path => "s/#{image_uuid}.#{image_format}" )
+      self.image.thumb('150x150#').store( :path => "#{image_uuid}_q.#{image_format}" )
+      self.image.thumb('640x640').store( :path => "#{image_uuid}_z.#{image_format}" )
+    end
   end
 
 end
