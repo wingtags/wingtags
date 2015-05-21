@@ -1,5 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "observations/index.html.erb", :type => :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "observations/index.html.erb", :type => :view do
+	it 'displays all observations' do
+    assign(:observations, build_list(:observation, 10))
+
+    render 
+
+    assert_select "img", 10
+  end
 end

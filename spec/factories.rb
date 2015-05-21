@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
   factory :user do
-    id          '88c0cd22-6b7e-4bfc-9914-2a9fce61d36b'
+    #id          '88c0cd22-6b7e-4bfc-9914-2a9fce61d36b'
     first_name  'Normal'
     last_name   'User'
     email       'normal_user@email.com'
@@ -23,7 +23,7 @@ FactoryGirl.define do
   end
 
   factory :animal do
-    id          '126'
+    #id          '126'
     name        'cockatoo'     
     gender      'Female'
     tag_code    209
@@ -52,7 +52,7 @@ FactoryGirl.define do
   #end
 
   factory :observation do
-    id            '021e52d0-a6b0-4f0e-b861-5316de98e1f6'
+    #id            '021e52d0-a6b0-4f0e-b861-5316de98e1f6'
     observed_at   Time.at(1388534400)
     latitude      52.516667
     longitude     13.383333

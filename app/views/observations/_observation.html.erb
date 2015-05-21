@@ -1,7 +1,7 @@
-<a href=<%= observation.image %>>
-  <img src=<%= observation.image + '_m '%> />
+<a href="#">
+  <img src=<%= observation.image.remote_url %> />
   <div class="caption">
-    <em>observation.animal.name</em><br/>
-    observation.observed_at
+    <em><%= observation.animal.name %></em><br/>
+    <%= observation.observed_at %>
   </div>
 </a>
