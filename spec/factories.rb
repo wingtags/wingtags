@@ -23,12 +23,12 @@ FactoryGirl.define do
   end
 
   factory :animal do
-    id          '126'
-    name        'cockatoo'     
+    #id          '126'
+    sequence(:name) { |n| "Cockatoo #{n}" }
+    sequence(:tag_code) { |n| n }
     gender      'Female'
-    tag_code    209
     #tag_colour  'Yellow'
-    notes       'She is feisty.'
+    sequence(:notes) { |n| "Note #{n}."}
   end
 
   factory :observation_form do
