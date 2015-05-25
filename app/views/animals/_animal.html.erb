@@ -7,13 +7,13 @@
   	</div>
 <div class="profile-child">
   	<div class="profile-detail">
-  	  <span class="profile-number"><%= animal.tag_code.	to_s.rjust(3, "0") %></span>
+  	  <span class="profile-number"><%= animal.tag_code %></span>
   	</div>
 
   	<div class="">
       <span class="profile-name"><%= animal.name %></span><br/>	
-  	 <p class="profile-text">Sighted <%= animal.observations.count %> times.<br/>
-  	  	Last seen 3 days ago.</p>
+  	 <p class="profile-text">Sighted <%= animal.observation_count %> times.<br/>
+  	  	<%= animal.last_observed %></p>
   	</div>
   </div>
 </div>

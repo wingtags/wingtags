@@ -6,7 +6,9 @@
   <section class="main-content">
     <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
       <% @animals.each do |animal| %>
-        <li><%= render animal %></li>
+      	<% present(animal) do |a| %>
+          <li><%= render partial: "animal", object: a %></li>
+        <% end %>
       <% end %>
   </ul>
   </section>

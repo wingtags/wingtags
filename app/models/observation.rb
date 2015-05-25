@@ -47,6 +47,8 @@ class Observation
     end
   end
 
+  index :observed_at
+
 
   private
 
