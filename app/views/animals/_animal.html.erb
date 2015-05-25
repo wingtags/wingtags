@@ -1,10 +1,20 @@
-<div class="profile panel">
-  <img class="avatar" src="<%= image_path('gallery.jpg') %>">
-  <div class="profile-detail">
-  	<span class="profile-name"><%= animal.tag_code %>&#x202F;∙&#x202F;<%= animal.name %></span><br/>
-  	<span>Sighted <%= animal.observations.count %> times.</span>
-  	<!-- <div class="">
-  		<p><%= animal.tag_code %> <%= animal.gender %></p>
-  	</div> -->
+<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700' rel='stylesheet' type='text/css'>
+
+<div class="module-profile">
+  <div class="avatar">
+    <img src="<%= image_path('gallery.jpg') %>">
   </div>
+
+  <div class="profile-detail">
+    <span class="profile-number"><%= animal.tag_code.to_s.rjust(3, "0") %></span>
+    
+  </div>
+
+  <div class="profile-child">
+    	<span class="profile-name"><%= animal.name %></span><br/>
+    	<span class="profile-text">Sighted <%= animal.observations.count %> times.<br/>
+    	Last seen 3 days ago.</span>
+
+    </div>
+
 </div>

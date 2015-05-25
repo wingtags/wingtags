@@ -9192,18 +9192,44 @@ table {
 
 
 
+.module-profile {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: #F5F5F5;
+}
+
 .avatar {
-  border-radius: 100%;
   width: 90px;
-  display: inline-block;
+  flex-shrink: 0;
 }
 
 .profile-detail {
   margin-left: 1.53846rem;
-  vertical-align: middle;
-  display: inline-block;
+}
+
+.profile-id {
+}
+
+.profile-child {
+  padding-left: 1.53846rem;
+  flex: 1;
+}
+
+.profile-number {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
 }
 
 .profile-name {
-  font-size: 1.53846rem;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.profile-text {
+  font-size: 0.5em;
+
 }
