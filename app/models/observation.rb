@@ -47,7 +47,9 @@ class Observation
     end
   end
 
-  index :observed_at
+  index :observed_at, :external => true
+  index :animal_id, :external => true
+  index :user_id, :external => true
 
 
   private
