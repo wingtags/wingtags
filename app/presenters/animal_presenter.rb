@@ -18,4 +18,12 @@ class AnimalPresenter < BasePresenter
       "Last seen #{time_interval} ago."
     end
   end
+
+  def avatar_url
+    if @model.avatar
+      @model.avatar.remote_url
+    else
+      h.image_path('gallery.jpg')
+    end
+  end
 end

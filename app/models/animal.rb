@@ -1,4 +1,5 @@
 class Animal
+  extend Dragonfly::Model
   include NoBrainer::Document
   include NoBrainer::Document::Timestamps
 
@@ -14,6 +15,13 @@ class Animal
   field :tag_code,    :type => Integer,     :store_as => 'Tag'
   field :tag_colour,  :type => String,      :store_as => 'Colour',        :default => TagColours::YELLOW
   field :notes,       :type => String,      :store_as => 'Notes'
+  field :avatar_uid,  :type => String,      :store_as => 'AvatarUid'
+
+  dragonfly_accessor :avatar do
+    storage_options do |img|
+      { path: "/avatars/#{image_uuid}.#{image_format}" }
+    end
+  end
 
   def save!
     self.save
