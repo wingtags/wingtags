@@ -174,8 +174,8 @@ table{
 }
 
 .profile-detail {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.5rem;
 }
 
 .profile-id {
@@ -200,6 +200,6 @@ table{
 }
 
 .profile-text {
-  font-size: $small-font-size;
+  font-size: $smallish-font-size;
   margin-bottom: 0;
 }
