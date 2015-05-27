@@ -26,4 +26,5 @@ class AnimalPresenter < BasePresenter
       h.image_path('animal_profile_default.png')
     end
   end
+  
 end
