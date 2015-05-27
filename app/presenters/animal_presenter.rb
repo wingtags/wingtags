@@ -23,7 +23,7 @@ class AnimalPresenter < BasePresenter
     if @model.avatar
       @model.avatar.remote_url
     else
-      h.image_path('gallery.jpg')
+      h.image_path('animal_profile_default.png')
     end
   end
 end
