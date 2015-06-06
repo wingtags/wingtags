@@ -1,6 +1,10 @@
 @import "foundation_and_overrides";
 @import "foundation";
 
+// Variables
+
+$smallish-font-size: 75%;
+
 @mixin flexbox() {
   display: -webkit-box;
   display: -moz-box;
@@ -19,26 +23,26 @@
 
 html, body{
     height: auto;
-    border-left: 15px solid #cdcdcd;
-    border-right: 15px solid #cdcdcd;
+    border-left: rem-calc(15) solid #cdcdcd;
+    border-right: rem-calc(15) solid #cdcdcd;
 }
 
 body{
 	@media #{$small-only} {
-		padding: 10px 10px;
+		padding: rem-calc(10) rem-calc(10);
 	}
-	padding: 20px 40px;
+	padding: rem-calc(20) rem-calc(40);
 }
 
 .wrapper {
     margin: 0 auto;
-    max-width: 1095px;
-    letter-spacing:0.2px;
+    max-width: rem-calc(1095);
+    letter-spacing: rem-calc(0.2);
 }
 
 .headrow{
 	background-color:#fdd800;
-	margin-bottom: 30px;
+	margin-bottom: rem-calc(30);
 	text-align: center;
 }
 
@@ -49,28 +53,28 @@ p, li{
 }
 
 footer{
-	height: 30px;
+	height: rem-calc(30);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: rem-calc(30);
     text-align: center;
     color: #999;
 }
 footer a {
-    margin-left: 10px;
-    margin-right: 10px;
-    line-height: 50px;
+    margin-left: rem-calc(10);
+    margin-right: rem-calc(10);
+    line-height: rem-calc(50);
     color: #999;
 }
 
 .top-bar{
-    margin: 0 auto 40px;
-    max-width: 1129px;
+    margin: 0 auto rem-calc(40);
+    max-width: rem-calc(1129);
 }
 
 .top-bar-section ul li > a{
 	text-decoration: none !important;
-	letter-spacing:1px;
+	letter-spacing: rem-calc(1);
 }
 
 .top-bar .toggle-topbar.menu-icon a span:after{
@@ -88,17 +92,17 @@ footer a {
 }
 
 .top-bar.expanded ul li h1 a{
-    color: $text-color;
+    //color: $text-color;
     text-decoration: none;
 }
 
 .top-bar .name h1 {
-    letter-spacing: 2px;
+    letter-spacing: rem-calc(2);
 }
 .name img{
-    margin-top: -21px;
-    margin-left: 15px;
-    height: 48px;
+    margin-top: rem-calc(-21);
+    margin-left: rem-calc(15);
+    height: rem-calc(48);
 }
 
 nav ul li a{
@@ -125,16 +129,16 @@ table{
 }
 
 .orbit-container {
-    margin: 0 auto 50px;
-    max-width: 1095px;
+    margin: 0 auto rem-calc(50);
+    max-width: rem-calc(1095);
 }
 .orbit-container .orbit-slides-container > * .orbit-caption {
-	max-width: 1095px;
-	bottom: 30px;
+	max-width: rem-calc(1095);
+	bottom: rem-calc(30);
 }
 .orbit-container .slidertitle{
 	color: #FFF;
-	font-size: 26px;
+	font-size: rem-calc(26);
 	margin: 0;
 	font-weight: normal;
 }
@@ -149,14 +153,14 @@ table{
     z-index: 1;
 }*/
 
-@media all and (max-width: 640px){
+@media all and (max-width: rem-calc(640px)) {
     .orbit-caption{
         display:none;
     }
 
     html, body{
-        border-left: 5px solid #cdcdcd;
-        border-right: 5px solid #cdcdcd;
+        border-left: rem-calc(5) solid #cdcdcd;
+        border-right: rem-calc(5) solid #cdcdcd;
     }
 
     .top-bar .name h1 a {

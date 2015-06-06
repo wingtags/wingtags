@@ -31,7 +31,7 @@ gem 'dragonfly-s3_data_store', '~> 1.1.0'
 gem 'rails_12factor', group: :production
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.3'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
