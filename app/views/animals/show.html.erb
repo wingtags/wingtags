@@ -1,0 +1,32 @@
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+
+
+
+<div class='row'>
+  <div class="small-12 columns">
+    <div id='map' style="height: 300px"></div>
+  </div class="">
+</div class='row'>
+
+<div class='row'>
+  <div class="small-12 columns">
+    <div class="stat-box">
+      Seen<br/>
+      <%= @animal.observations.count %><br/>
+      times
+    </div>
+    <p><%= @animal.observations.count %></p>
+    <p><%=  users = @animal.observations.each { |o| o.user }
+            users.uniq{ |u| u.id }.count
+     %></p>
+  </div class="">
+</div class='row'>
+
+<script>
+  L.mapbox.accessToken = 'pk.eyJ1Ijoid2luZ3RhZ3MiLCJhIjoiOWI5ZDRhY2Q1MjA2M2VjNDk5NjIxYzYyNTk3NmFmOGQifQ.4KimRehL-bddDAafz0F8HQ';
+  var map = L.mapbox.map('map', 'wingtags.gip2j1eb').setView([40, -74.50], 9);
+</script>
+
+
+<!-- <div id='map' style="position:absolute; top:0; bottom:0; width:100%;"></div> -->
