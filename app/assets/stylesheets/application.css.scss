@@ -34,10 +34,21 @@ body{
 	padding: rem-calc(20) rem-calc(40);
 }
 
+section {
+  margin-bottom: 2rem;
+}
+
 .wrapper {
     margin: 0 auto;
     max-width: rem-calc(1095);
     letter-spacing: rem-calc(0.2);
+}
+
+.divider {
+  border-bottom: solid #ccc;
+  border-bottom-width: 1px;
+  width: 10rem;
+  margin: auto;
 }
 
 .headrow{
@@ -67,7 +78,7 @@ footer a {
     color: #999;
 }
 
-.top-bar{
+.top-bar {
     margin: 0 auto rem-calc(40);
     max-width: rem-calc(1129);
 }
