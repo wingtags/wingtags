@@ -33,6 +33,14 @@ describe Observation do
       expect(observation.image.file).to be_instance_of(File)
     end
 
+    it 'should save without an image' do
+      observation = FactoryGirl.build(:observation, image: nil)
+
+      observation.save
+
+      expect(observation.image).to be(nil)
+    end
+
   end
 
   describe 'Persistence' do
@@ -67,6 +75,8 @@ describe Observation do
       record = NoBrainer.run { |r| r.table('Sighting').get("011bb59f-4825-48f9-9062-360258ba6cf9") }
       expect(record["SightingDate"]).to equal(1388534400000)
     end
+
+
   end
 end
 
