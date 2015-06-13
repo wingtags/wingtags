@@ -127,28 +127,24 @@ App.FormView = Backbone.View.extend({
   },
 
   preparePayload: function() {
-    //var data = {
-    //  "observations" : [{
-    //    'tag': this.model.get('tag'),
-    //    'address': this.model.get('address'),
-    //    'latitude': this.model.get('latitude'),
-    //    'longitude': this.model.get('longitude'),
-    //    'image': "",//this.model.get('image'),
-    //    'timestamp': new Date().getTime()
-    //  }]
-    //};
+    var form = new FormData(),
+        tag = this.model.get('tag'),
+        address = this.model.get('address'),
+        latitude = this.model.get('latitude'),
+        longitude = this.model.get('longitude'),
+        image = this.model.get('image'),
+        termscondition = this.model.get('termscondition');
 
-    var data = new FormData();
-    ////data.append('observations', JSON.stringify(observations));
-    data.append('tag', this.model.get('tag'));
-    data.append('address', this.model.get('address'));
-    data.append('latitude', this.model.get('latitude'));
-    data.append('longitude', this.model.get('longitude'));
-    data.append('image', this.model.get('image'));
-    data.append('termscondition', this.model.get('termscondition'));
-    data.append('timestamp', new Date().getTime());
-    //this.send(data);
-    this.send(data);
+    if (tag)            { form.append('tag', tag); }
+    if (address)        { form.append('address', address); }
+    if (latitude)       { form.append('latitude', latitude); }
+    if (longitude)      { form.append('longitude', longitude); }
+    if (image)          { form.append('image', image); }
+    if (termscondition) { form.append('termscondition', termscondition); }
+
+    form.append('timestamp', new Date().getTime());
+
+    this.send(form);
   },
 
   removeSubviews: function() {
@@ -159,12 +155,12 @@ App.FormView = Backbone.View.extend({
     );
   },
 
-  renderThanks: function(data) {
-    $(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
-      var modal = $(this);
-      modal.foundation('reveal', 'close');
-    });
-
+  renderThanks: function(data, modal) {
+    //$(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
+    //  var modal = $(this);
+    //  modal.foundation('reveal', 'close');
+    //});
+    modal.foundation('reveal', 'close');
     this.removeSubviews();    
     this.$el.html(JST['thanks']({name: data.animal.name}));
   },
@@ -180,7 +176,8 @@ App.FormView = Backbone.View.extend({
         },
         onSuccess = this.renderThanks;
 
-    $('#spinner-modal').foundation('reveal', 'open');
+    var modal = $('#spinner-modal');
+        modal.foundation('reveal', 'open');
 
     var request = $.ajax(options)
       .then(function(response) {
@@ -191,7 +188,7 @@ App.FormView = Backbone.View.extend({
       })
       .then(function(animal) {
         observation.animal = animal;
-        onSuccess(observation);
+        onSuccess(observation, modal);
       });
   }
 });
