@@ -156,11 +156,6 @@ App.FormView = Backbone.View.extend({
   },
 
   renderThanks: function(data, modal) {
-    //$(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
-    //  var modal = $(this);
-    //  modal.foundation('reveal', 'close');
-    //});
-    modal.foundation('reveal', 'close');
     this.removeSubviews();    
     this.$el.html(JST['thanks']({name: data.animal.name}));
   },
@@ -174,21 +169,23 @@ App.FormView = Backbone.View.extend({
           processData: false,
           contentType: false,
         },
-        onSuccess = this.renderThanks;
+        onSuccess = this.renderThanks,
+        modal = $('#spinner-modal');
 
-    var modal = $('#spinner-modal');
-        modal.foundation('reveal', 'open');
+    $('#app-container').fadeTo(333, 0.5);
+    $('input[type=submit]').prop('disabled', true);
 
     var request = $.ajax(options)
       .then(function(response) {
         observation = response;
-        return $.get( '/animals/' + response.animal_id);
+        return $.get('/animals/' + response.animal_id + '.json');
       }, function(error) {
         console.log(error);
       })
+      .always(function() { $('#app-container').fadeTo(333, 1); })
       .then(function(animal) {
         observation.animal = animal;
-        onSuccess(observation, modal);
+        onSuccess(observation);
       });
   }
 });

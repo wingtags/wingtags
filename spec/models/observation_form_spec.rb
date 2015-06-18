@@ -2,10 +2,8 @@ require 'rails_helper'
 
 describe ObservationForm do
   
-	context "valid observations" do
-
-    describe '#to_observation' do
-
+	context "Complete observation" do
+    xdescribe '#to_observation' do
       it 'should return an instantiated Observation object' do
         observation = FactoryGirl.build :observation
         form = FactoryGirl.build :observation_form
@@ -20,7 +18,18 @@ describe ObservationForm do
         expect(subject.address).to eq(observation.address)
       end
     end
+  end
 
+  context "Observation without image" do
+    describe '#to_observation' do
+      it 'should return an instantiated Observation object' do
+        animal = FactoryGirl.create :animal 
+        form = FactoryGirl.build(:observation_form, image: nil, tag: animal.tag_code)
+        
+        subject = form.to_observation
+      end
+    end
+  end
     #describe '#save' do
     #  it "should save" do
     #    user = FactoryGirl.create :user
@@ -35,7 +44,6 @@ describe ObservationForm do
     #    expect(Observation.all.count).to eq 1
     #  end
     #end
-  end
 
   context "invalid observations" do
     # one of latitude and longitude are empty

@@ -27,9 +27,7 @@ describe AnimalsController, :type => :controller do
       get :index
       expect(assigns(:animals)).to match_array(animals)
     end
-  end
 
-  describe "#index" do
     it "renders index.html.erb" do
       animals = create_list(:animal, 10)
       get :index

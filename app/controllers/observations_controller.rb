@@ -23,6 +23,10 @@ class ObservationsController < ApplicationController
     end
   end
 
+  def show
+    @observation = Observation.find(params[:id])
+  end
+
   private
 
   def observation_params

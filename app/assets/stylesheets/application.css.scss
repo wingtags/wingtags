@@ -16,9 +16,22 @@ $smallish-font-size: 75%;
 @mixin flex($values) {
   -webkit-box-flex: $values;
   -moz-box-flex:  $values;
-  -webkit-flex:  $values;
   -ms-flex:  $values;
   flex:  $values;
+}
+
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin justify-content($justification) {
+  -webkit-justify-content: $justification;
+  -moz-justify-content: $justification;
+  -ms-justify-content: $justification;
+  justify-content: $justification;
 }
 
 html, body{
@@ -55,6 +68,12 @@ section {
 	background-color:#fdd800;
 	margin-bottom: rem-calc(30);
 	text-align: center;
+}
+
+.stat-row { 
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 p, li{
@@ -179,14 +198,35 @@ table{
     }
 }
 
+
+
 .module-profile {
   @include flexbox();
   background: #F5F5F5;
 }
 
-.avatar {
-  width: 5rem;
+.module-profile-vertical {
+  @extend .module-profile;
+  @include flex-direction(column);
+  
+  .profile-child {
+    padding: 0.75rem 0;
+  }
+
+  img {
+    width: 100%;
+  }
 }
+
+.module-profile-horizontal {
+  @extend .module-profile;
+
+  .avatar {
+    width: 5rem;
+  }
+}
+
+
 
 .profile-detail {
   padding-left: 0.75rem;
@@ -199,6 +239,13 @@ table{
 .profile-child {
   @include flexbox();
   @include flex(1);
+  @include flex-direction(row);
+}
+
+.profile-info {
+  @include flexbox();
+  @include flex-direction(row);
+  @include justify-content(space-between);
 }
 
 .profile-number {
@@ -216,8 +263,11 @@ table{
 }
 
 .profile-text {
-  font-size: $smallish-font-size;
-  margin-bottom: 0;
+  p {
+    font-size: $smallish-font-size;
+    margin-bottom: 0;
+    padding-right: 1rem;
+  }
 }
 
 .wingtags-header {

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :animals, only: [:index, :show]
 
-  resources :observations, only: [:index, :new, :create]
+  resources :observations, only: [:index, :new, :create, :show]
 
   #namespace :admin do 
   #  get 'dashboard/index'
