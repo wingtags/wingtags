@@ -172,7 +172,9 @@ App.FormView = Backbone.View.extend({
         onSuccess = this.renderThanks,
         modal = $('#spinner-modal');
 
-    $('#app-container').fadeTo(333, 0.5);
+    $('#app-container').animate({
+      opacity: 0.3
+    }, 333);
     $('#spinner').fadeTo(333, 1);
     $('input[type=submit]').prop('disabled', true);
 
