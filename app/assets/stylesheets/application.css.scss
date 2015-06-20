@@ -198,7 +198,14 @@ table{
     }
 }
 
-
+#spinner {
+  display: none;
+  width: 2em;
+  height: 2em;
+  position: fixed;
+  top: 14em; 
+  left: 48%;
+}
 
 .module-profile {
   @include flexbox();

@@ -173,6 +173,7 @@ App.FormView = Backbone.View.extend({
         modal = $('#spinner-modal');
 
     $('#app-container').fadeTo(333, 0.5);
+    $('#spinner').fadeTo(333, 1);
     $('input[type=submit]').prop('disabled', true);
 
     var request = $.ajax(options)
@@ -182,7 +183,10 @@ App.FormView = Backbone.View.extend({
       }, function(error) {
         console.log(error);
       })
-      .always(function() { $('#app-container').fadeTo(333, 1); })
+      .always(function() { 
+        $('#spinner').fadeTo(333, 0);
+        $('#app-container').fadeTo(333, 1);
+      })
       .then(function(animal) {
         observation.animal = animal;
         onSuccess(observation);
