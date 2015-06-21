@@ -107,19 +107,19 @@ footer a {
 	letter-spacing: rem-calc(1);
 }
 
-.top-bar .toggle-topbar.menu-icon a span:after{
-    box-shadow: none;   
-}
+//.top-bar .toggle-topbar.menu-icon a span:after{
+//    box-shadow: none;   
+//}
 
-.top-bar .menu-icon{
-    background-image: url("../stylesheets/menubutton.png");
-    background-repeat: no-repeat;
-}
-
-.top-bar.expanded .menu-icon{
-    background-image: url("../stylesheets/menubutton_y.png");
-    background-repeat: no-repeat;
-}
+//.top-bar .menu-icon{
+//    background-image: url("../stylesheets/menubutton.png");
+//    background-repeat: no-repeat;
+//}
+//
+//.top-bar.expanded .menu-icon{
+//    background-image: url("../stylesheets/menubutton_y.png");
+//    background-repeat: no-repeat;
+//}
 
 .top-bar.expanded ul li h1 a{
     //color: $text-color;

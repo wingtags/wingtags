@@ -26,9 +26,9 @@
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href=<%= root_path %>>WINGTAGS<%= image_tag "icon1.png" %></h1>
+          <h1><a href=<%= root_path %>>WINGTAGS<%= image_tag "icon1.png" %></a></h1>
         </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
   
       <section class="top-bar-section">
@@ -38,9 +38,9 @@
           <li><%= link_to 'Report a sighting', new_observation_path %></li>
           <li class="divider"></li>
           <!-- <li><a href="#">SIGHTINGS</a></li>
-          <li class="divider"></li>
-          <li><%= link_to 'Gallery', observations_index_path %></li>
           <li class="divider"></li> -->
+          <li><%= link_to 'Gallery', animals_path %></li>
+          <li class="divider"></li>
           <li><%= link_to 'Sponsorship', sponsorship_path %></li>
         </ul>
       </section>
